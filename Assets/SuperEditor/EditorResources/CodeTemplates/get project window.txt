@@ -1,0 +1,4 @@
+$Statement$
+var editorAssembly = typeof(UnityEditor.EditorWindow).Assembly;
+UnityEditor.EditorWindow.GetWindow(editorAssembly.GetType("UnityEditor.ProjectBrowser"));
+$end$

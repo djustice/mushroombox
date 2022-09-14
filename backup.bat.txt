@@ -1,0 +1,4 @@
+dir "C:\Users\Tora"
+mkdir "C:\Users\Tora\Mushroom Box_$(date)"
+cp "Mushroom Box" "Mushroom Box_$(DATE)"
+"C:\Program Files\7-Zip\7z.exe" a "C:\Users\Tora\mbox.7z" "C:\Users\Tora\Mushroom Box"
