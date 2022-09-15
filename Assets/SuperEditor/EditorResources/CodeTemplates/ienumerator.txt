@@ -1,5 +1,0 @@
-IEnumerator MyCoroutine()
-{
-	yield return new WaitForSeconds(1f);
-	$end$
-}
