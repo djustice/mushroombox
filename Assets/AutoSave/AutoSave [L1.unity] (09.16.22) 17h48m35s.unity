@@ -16498,6 +16498,7 @@ GameObject:
   - component: {fileID: 1365333537}
   - component: {fileID: 1365333540}
   - component: {fileID: 1365333539}
+  - component: {fileID: 1365333541}
   m_Layer: 0
   m_Name: CloseShopDialogButton
   m_TagString: Untagged
@@ -16576,9 +16577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 275a2ad2c42f3db45b2f9d7117d38ea7, type: 2}
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Close
+      Shop Dialog","summary":null,"pan":{"x":313.7876,"y":-148.7088},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-156.0,"y":-156.0},"guid":"a4c1d0bb-4fd5-4556-b479-bf507b76c01c","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
+      Shop Button","$type":"System.String"},"target":null},"position":{"x":48.0,"y":-132.0},"guid":"b5fd3694-5670-4570-81a6-8a48317f0480","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"CloseShopDialogButton","$type":"System.String"}},"position":{"x":48.0,"y":-252.0},"guid":"35bfd21e-aec6-447f-8af2-91fb4703271f","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"20f9a0d2-9652-406d-bf69-a9cdc5e2fe2a","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"703b1a86-8bfc-4549-b675-7644004a5dfd","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+    _objectReferences: []
 --- !u!114 &1365333540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16604,6 +16606,32 @@ MonoBehaviour:
     - {fileID: 1562021515}
     - {fileID: 5341269}
     - {fileID: 1588123524}
+--- !u!61 &1365333541
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365333533}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12867737, y: -0.58677673}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 133.24625, y: 139.84137}
+  m_EdgeRadius: 0
 --- !u!1 &1370394256
 GameObject:
   m_ObjectHideFlags: 0
