@@ -17705,6 +17705,8 @@ GameObject:
   - component: {fileID: 1456189519}
   - component: {fileID: 1456189518}
   - component: {fileID: 1456189521}
+  - component: {fileID: 1456189523}
+  - component: {fileID: 1456189522}
   m_Layer: 0
   m_Name: GoalsDialogMask1
   m_TagString: Untagged
@@ -17796,6 +17798,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 136.36914, y: 177.35443}
   m_EdgeRadius: 0
+--- !u!114 &1456189522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456189515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Goals
+      Dialog Mask","summary":null,"pan":{"x":96.25694,"y":63.46302},"zoom":0.8,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-396.0,"y":-72.0},"guid":"6edafab4-fc8a-498c-b20d-d7c7709fa0cf","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
+      Goals Button","$type":"System.String"},"target":null},"position":{"x":24.0,"y":-60.0},"guid":"f281aa6c-97aa-4cfd-989f-f0eff47e275b","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"GoalsButton","$type":"System.String"}},"position":{"x":-204.0,"y":-60.0},"guid":"229544f8-efb9-45c7-991d-c88fb3ea14b5","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"f96178b4-eb70-4f18-8d01-6fa0ea8488ad","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"exit","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"74558475-5185-4a6b-8041-40b877fcb191","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
+    _objectReferences: []
+--- !u!114 &1456189523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456189515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &1456866903
 GameObject:
   m_ObjectHideFlags: 0
