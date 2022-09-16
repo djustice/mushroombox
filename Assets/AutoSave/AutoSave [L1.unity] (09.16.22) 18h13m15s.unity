@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 5341273}
   - component: {fileID: 5341276}
   - component: {fileID: 5341275}
+  - component: {fileID: 5341277}
   m_Layer: 0
   m_Name: ShopDialogMask1
   m_TagString: Untagged
@@ -349,9 +350,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 275a2ad2c42f3db45b2f9d7117d38ea7, type: 2}
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Shop
+      Dialog Mask","summary":null,"pan":{"x":20.0,"y":158.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-198.0,"y":52.0},"guid":"4449941b-48bb-4a95-ba31-9ed176e21881","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
+      Shop Button","$type":"System.String"},"target":null},"position":{"x":6.0,"y":76.0},"guid":"94746802-269b-41ee-ab58-3fe9a4baca40","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"CloseShopDialogButton","$type":"System.String"}},"position":{"x":6.0,"y":-44.0},"guid":"64081b88-8753-48c7-9f51-0675c916f8bc","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"02eee265-729e-4822-b5b0-fe0a891c61a2","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"9678b9a6-2d7c-4536-b1b7-b50c9e144f49","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+    _objectReferences: []
 --- !u!114 &5341276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +379,32 @@ MonoBehaviour:
     - {fileID: 1562021515}
     - {fileID: 5341269}
     - {fileID: 1588123524}
+--- !u!61 &5341277
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.11364746, y: -0.14272308}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 135.74313, y: 211.53648}
+  m_EdgeRadius: 0
 --- !u!1 &7151371
 GameObject:
   m_ObjectHideFlags: 0
@@ -16498,6 +16526,7 @@ GameObject:
   - component: {fileID: 1365333537}
   - component: {fileID: 1365333540}
   - component: {fileID: 1365333539}
+  - component: {fileID: 1365333541}
   m_Layer: 0
   m_Name: CloseShopDialogButton
   m_TagString: Untagged
@@ -16577,11 +16606,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Close
-      Shop Dialog","summary":null,"pan":{"x":542.0043,"y":31.91955},"zoom":0.4999999,"elements":[{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
-      Shop Button","$type":"System.String"},"target":{"$content":0,"$type":"UnityEngine.Object"}},"position":{"x":60.0,"y":-108.0},"guid":"518d926d-6aa5-412e-a271-50cddc3d3bd2","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"10"},{"nest":{"source":"Macro","macro":1,"embed":null},"defaultValues":{"In":{"$content":"CloseShopDialogButton","$type":"System.String"}},"position":{"x":-324.0,"y":312.0},"guid":"f4800084-2df2-4000-84ff-7ae3c7fd4a1a","$version":"A","$type":"Unity.VisualScripting.SubgraphUnit","$id":"12"},{"numeric":false,"defaultValues":{},"position":{"x":-48.0,"y":192.0},"guid":"d0647e89-d960-445f-999f-c0fcb31b6090","$version":"A","$type":"Unity.VisualScripting.Equal","$id":"15"},{"member":{"name":"name","parameterTypes":null,"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"target":null},"position":{"x":-228.0,"y":192.0},"guid":"74937ff3-abd1-46af-a9f0-e1f205a123e3","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"17"},{"defaultValues":{},"position":{"x":-78.0,"y":-86.0},"guid":"182f7b59-ae14-4326-92c0-8865a0f4541a","$version":"A","$type":"Unity.VisualScripting.If","$id":"20"},{"coroutine":false,"defaultValues":{},"position":{"x":-273.0,"y":-201.0},"guid":"ac85dd6e-266d-4482-bb8d-6eb127f78ae9","$version":"A","$type":"Unity.VisualScripting.Update","$id":"22"},{"defaultValues":{},"position":{"x":-72.0,"y":36.0},"guid":"2c3780e3-5476-41de-958c-32125355eb15","$version":"A","$type":"Unity.VisualScripting.If","$id":"24"},{"chainable":false,"member":{"name":"GetMouseButtonDown","parameterTypes":["System.Int32"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%button":{"$content":0,"$type":"System.Int32"}},"position":{"x":-96.0,"y":-252.0},"guid":"85ce8548-7ee0-4730-b855-67ff42041199","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"26"},{"sourceUnit":{"$ref":"24"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"10"},"destinationKey":"enter","guid":"6ab28278-4189-4d19-877a-752ba71fc098","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"24"},"destinationKey":"enter","guid":"22e53226-91ef-4321-bbd0-4878fc59395c","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"22"},"sourceKey":"trigger","destinationUnit":{"$ref":"26"},"destinationKey":"enter","guid":"8e9b84d7-59a1-4b53-9655-5f50a2ad7abc","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"26"},"sourceKey":"exit","destinationUnit":{"$ref":"20"},"destinationKey":"enter","guid":"f7a77fc0-3701-4c29-b767-c4409acc7be1","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"12"},"sourceKey":"Out","destinationUnit":{"$ref":"15"},"destinationKey":"b","guid":"122d526f-8dbd-4e59-b72b-c1106e0fa60b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"value","destinationUnit":{"$ref":"15"},"destinationKey":"a","guid":"8dd454ea-6f1a-4aaf-854a-e83b6abcb4b7","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"equal","destinationUnit":{"$ref":"24"},"destinationKey":"condition","guid":"254ec1d3-e413-4626-afdd-7f3da5534e01","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"26"},"sourceKey":"result","destinationUnit":{"$ref":"20"},"destinationKey":"condition","guid":"810d0669-55eb-442e-ba67-9c7d6e311a19","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
-    _objectReferences:
-    - {fileID: 1215005127}
-    - {fileID: 11400000, guid: 4b75ea3bb4c149e46a00744618cc5ccf, type: 2}
+      Shop Dialog","summary":null,"pan":{"x":313.7876,"y":-148.7088},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-156.0,"y":-156.0},"guid":"a4c1d0bb-4fd5-4556-b479-bf507b76c01c","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
+      Shop Button","$type":"System.String"},"target":null},"position":{"x":48.0,"y":-132.0},"guid":"b5fd3694-5670-4570-81a6-8a48317f0480","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"CloseShopDialogButton","$type":"System.String"}},"position":{"x":48.0,"y":-252.0},"guid":"35bfd21e-aec6-447f-8af2-91fb4703271f","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"20f9a0d2-9652-406d-bf69-a9cdc5e2fe2a","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"703b1a86-8bfc-4549-b675-7644004a5dfd","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+    _objectReferences: []
 --- !u!114 &1365333540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16607,6 +16634,32 @@ MonoBehaviour:
     - {fileID: 1562021515}
     - {fileID: 5341269}
     - {fileID: 1588123524}
+--- !u!61 &1365333541
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365333533}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12867737, y: -0.58677673}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 133.24625, y: 139.84137}
+  m_EdgeRadius: 0
 --- !u!1 &1370394256
 GameObject:
   m_ObjectHideFlags: 0
@@ -17651,8 +17704,9 @@ GameObject:
   - component: {fileID: 1456189520}
   - component: {fileID: 1456189519}
   - component: {fileID: 1456189518}
-  - component: {fileID: 1456189516}
   - component: {fileID: 1456189521}
+  - component: {fileID: 1456189523}
+  - component: {fileID: 1456189522}
   m_Layer: 0
   m_Name: GoalsDialogMask1
   m_TagString: Untagged
@@ -17660,35 +17714,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1456189516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456189515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1456189521}
-          m_TargetAssemblyTypeName: GoalsDialogCloseHandler, Assembly-CSharp
-          m_MethodName: OnCloseButtonClicked
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1456189518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17747,7 +17772,33 @@ RectTransform:
   m_AnchoredPosition: {x: -952.91406, y: 1423.106}
   m_SizeDelta: {x: 136.1667, y: 212.5935}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1456189521
+--- !u!61 &1456189521
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456189515}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.056411743, y: 17.71991}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 136.36914, y: 177.35443}
+  m_EdgeRadius: 0
+--- !u!114 &1456189522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17756,14 +17807,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456189515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ff759fbfaaf244ba1167fa777567b3, type: 3}
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalsDialog: {fileID: 217567071}
-  maskTop: {fileID: 1456189515}
-  maskBottom: {fileID: 0}
-  goalsButton: {fileID: 0}
-  anim: {fileID: 0}
+  _data:
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Goals
+      Dialog Mask","summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":-144.0},"guid":"3d3aacee-7293-4328-93de-cba0c894aca9","$version":"A","$type":"Unity.VisualScripting.Start"},{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":60.0},"guid":"63dfac02-bff7-47a6-bb0f-e945e3c376bb","$version":"A","$type":"Unity.VisualScripting.Update"}],"$version":"A"}}}'
+    _objectReferences: []
+--- !u!114 &1456189523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456189515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &1456866903
 GameObject:
   m_ObjectHideFlags: 0
