@@ -1576,11 +1576,13 @@ MonoBehaviour:
     _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[{"name":"ShopDialog","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Animator,
       UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"GoalsDialog","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Animator,
       UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"SettingsDialog","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Animator,
-      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"PurchaseDialog","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1215005131}
     - {fileID: 217567073}
     - {fileID: 822137083}
+    - {fileID: 1525358407}
 --- !u!4 &253730239
 Transform:
   m_ObjectHideFlags: 0
@@ -12034,7 +12036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -52.7839, y: 0.00057394686}
+  m_AnchoredPosition: {x: -52.7839, y: -0.0009820639}
   m_SizeDelta: {x: 87.973, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &809429194
@@ -14595,8 +14597,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 340709669}
   m_HandleRect: {fileID: 340709668}
   m_Direction: 2
-  m_Value: 0.99998814
-  m_Size: 0.91083336
+  m_Value: 0.99997896
+  m_Size: 0.91083306
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17526,7 +17528,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -19220,6 +19221,8 @@ GameObject:
   - component: {fileID: 1692998253}
   - component: {fileID: 1692998252}
   - component: {fileID: 1692998251}
+  - component: {fileID: 1692998256}
+  - component: {fileID: 1692998255}
   m_Layer: 0
   m_Name: ShopItem
   m_TagString: Untagged
@@ -19266,7 +19269,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -19337,6 +19339,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692998249}
   m_CullTransparentMesh: 1
+--- !u!114 &1692998255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692998249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 6b60446f8794b63499ad424dd17300f2, type: 2}
+--- !u!114 &1692998256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692998249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Item
+      Identifier","value":null,"typeHandle":{"Identification":"System.String, mscorlib,
+      Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Mask","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Spore
+      Image","value":null,"typeHandle":{"Identification":"UnityEngine.UI.Image, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Cost
+      Text","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
+      Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Quantity
+      Text","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
+      Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Animator","value":null,"typeHandle":{"Identification":"UnityEngine.Animator,
+      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 5341269}
+    - {fileID: 1224346540}
+    - {fileID: 1235181672}
 --- !u!1 &1697648483
 GameObject:
   m_ObjectHideFlags: 0
@@ -21005,7 +21051,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -35278,7 +35323,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}

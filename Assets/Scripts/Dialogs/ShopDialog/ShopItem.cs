@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,35 +20,34 @@ public class ShopItem : MonoBehaviour
 
     public void Start()
     {
-        item = purchaseDialog.GetComponentInChildren<TextMeshProUGUI>();
+        //item = purchaseDialog.GetComponentInChildren<TextMeshProUGUI>();
 
-        if (Game.coinCount >= int.Parse(costText.text))
-        {
-            costText.color = new Color(0f, 0.5f, 0f, 1f);
-        }
-        else
-        {
-            costText.color = new Color(0.6f, 0f, 0f, 1f);
-        }
+        //if (Game.coinCount >= int.Parse(costText.text))
+        //{
+        //    costText.color = new Color(0f, 0.5f, 0f, 1f);
+        //}
+        //else
+        //{
+        //    costText.color = new Color(0.6f, 0f, 0f, 1f);
+        //}
     }
 
     private void OnMouseDown()
     {
-        transform.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+        //transform.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
     }
 
     private void OnMouseUp()
     {
-        transform.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f);
+        //transform.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f);
         Animator purchaseAnimation = purchaseDialog.GetComponent<Animator>();
 
-        maskTop.SetActive(false);
         anim = shopDialog.GetComponent<Animator>();
         anim.SetInteger("state", 2);
-
+	    //
         if (itemID.StartsWith("Spores"))
             item.text = "Spores";
-
+	    //
         if (itemID == "Spores.10")
         {
             if (Game.coinCount >= 20)
