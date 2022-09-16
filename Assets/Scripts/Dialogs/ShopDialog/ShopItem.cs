@@ -9,7 +9,6 @@ public class ShopItem : MonoBehaviour
     public GameObject purchaseDialog;
     public GameObject shopDialog;
     public GameObject maskTop;
-    public GameObject maskBottom;
     public Image sporeImage;
     public TextMeshProUGUI costText;
     public TextMeshProUGUI quantityText;
@@ -44,7 +43,6 @@ public class ShopItem : MonoBehaviour
         Animator purchaseAnimation = purchaseDialog.GetComponent<Animator>();
 
         maskTop.SetActive(false);
-        maskBottom.SetActive(false);
         anim = shopDialog.GetComponent<Animator>();
         anim.SetInteger("state", 2);
 

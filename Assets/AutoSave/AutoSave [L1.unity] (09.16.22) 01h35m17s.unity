@@ -1423,7 +1423,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 193690156}
-  - {fileID: 282375847}
   - {fileID: 1456189520}
   m_Father: {fileID: 1378334219}
   m_RootOrder: -1
@@ -1482,21 +1481,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"goalsDialog","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"shopButton","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"shopButton","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"goalsButton","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"settingsButton","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"masks","value":{"$content":[{"$content":3,"$type":"UnityEngine.Object"},{"$content":4,"$type":"UnityEngine.Object"}],"$type":"Unity.VisualScripting.AotList"},"typeHandle":{"Identification":"Unity.VisualScripting.AotList,
-      Unity.VisualScripting.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"anim","value":{"$content":5,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Animator,
-      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"goalsButton","value":{"$content":6,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"masks","value":{"$content":[{"$content":3,"$type":"UnityEngine.Object"}],"$type":"Unity.VisualScripting.AotList"},"typeHandle":{"Identification":"Unity.VisualScripting.AotList,
+      Unity.VisualScripting.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"anim","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Animator,
+      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
-    - {fileID: 217567071}
     - {fileID: 1588123520}
+    - {fileID: 689248399}
     - {fileID: 1562021515}
     - {fileID: 1456189515}
-    - {fileID: 282375842}
     - {fileID: 689248403}
-    - {fileID: 689248399}
 --- !u!1 &223607052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,130 +7587,6 @@ Transform:
   m_Father: {fileID: 597601897}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &282375842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 282375847}
-  - component: {fileID: 282375846}
-  - component: {fileID: 282375845}
-  - component: {fileID: 282375843}
-  - component: {fileID: 282375848}
-  m_Layer: 0
-  m_Name: GoalsDialogMask2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &282375843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282375842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 282375848}
-          m_TargetAssemblyTypeName: GoalsDialogCloseHandler, Assembly-CSharp
-          m_MethodName: OnCloseButtonClicked
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &282375845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282375842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &282375846
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282375842}
-  m_CullTransparentMesh: 1
---- !u!224 &282375847
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282375842}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3801001, y: 1.3801001, z: 1.3801001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 217567072}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -975.1771, y: -1440.7891}
-  m_SizeDelta: {x: 1379.0978, y: 247.3174}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &282375848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282375842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ff759fbfaaf244ba1167fa777567b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goalsDialog: {fileID: 217567071}
-  maskTop: {fileID: 1456189515}
-  maskBottom: {fileID: 282375842}
-  goalsButton: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!1 &293324379
 GameObject:
   m_ObjectHideFlags: 0
@@ -11295,7 +11167,7 @@ MonoBehaviour:
     - {fileID: 1588123520}
     - {fileID: 1562021515}
     - {fileID: 1456189515}
-    - {fileID: 282375842}
+    - {fileID: 0}
     - {fileID: 689248403}
 --- !u!95 &689248403
 Animator:
@@ -12162,7 +12034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -52.7839, y: 0.00057394686}
+  m_AnchoredPosition: {x: -52.7839, y: 0.00035170873}
   m_SizeDelta: {x: 87.973, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &809429194
@@ -17654,7 +17526,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -17846,7 +17717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalsDialog: {fileID: 217567071}
   maskTop: {fileID: 1456189515}
-  maskBottom: {fileID: 282375842}
+  maskBottom: {fileID: 0}
   goalsButton: {fileID: 0}
   anim: {fileID: 0}
 --- !u!1 &1456866903
@@ -19394,7 +19265,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -21133,7 +21003,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
@@ -35406,7 +35275,6 @@ MonoBehaviour:
   purchaseDialog: {fileID: 1525358407}
   shopDialog: {fileID: 1215005127}
   maskTop: {fileID: 5341269}
-  maskBottom: {fileID: 0}
   sporeImage: {fileID: 1190924067}
   costText: {fileID: 712202538}
   quantityText: {fileID: 815528851}
