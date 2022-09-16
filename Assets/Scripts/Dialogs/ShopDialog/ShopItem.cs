@@ -39,53 +39,54 @@ public class ShopItem : MonoBehaviour
 
     private void OnMouseUp()
     {
-        //transform.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f);
-        Animator purchaseAnimation = purchaseDialog.GetComponent<Animator>();
+        ////transform.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f);
+        //Animator purchaseAnimation = purchaseDialog.GetComponent<Animator>();
 
-        anim = shopDialog.GetComponent<Animator>();
-        anim.SetInteger("state", 2);
-	    //
-        if (itemID.StartsWith("Spores"))
-            item.text = "Spores";
-	    //
-        if (itemID == "Spores.10")
-        {
-            if (Game.coinCount >= 20)
-            {
-                purchaseAnimation.SetInteger("state", 1);
-                sporeImage.gameObject.SetActive(true);
-                costText.text = "20";
-                quantityText.text = "10x";
-            }
-        } else if (itemID == "Spores.30")
-        {
-            if (Game.coinCount >= 50)
-            {
-                purchaseAnimation.SetInteger("state", 1);
-                sporeImage.gameObject.SetActive(true);
-                costText.text = "50";
-                quantityText.text = "30x";
-            }
-        }
-        else if (itemID == "Spores.80")
-        {
-            if (Game.coinCount >= 100)
-            {
-                purchaseAnimation.SetInteger("state", 1);
-                sporeImage.gameObject.SetActive(true);
-                costText.text = "100";
-                quantityText.text = "80x";
-            }
-        }
-        else if (itemID == "Spores.500")
-        {
-            if (Game.coinCount >= 500)
-            {
-                purchaseAnimation.SetInteger("state", 1);
-                sporeImage.gameObject.SetActive(true);
-                costText.text = "500";
-                quantityText.text = "500x";
-            }
-        }
+        //anim = shopDialog.GetComponent<Animator>();
+        //anim.SetInteger("state", 2);
+	    ////
+        //if (itemID.StartsWith("Spores"))
+        //    item.text = "Spores";
+	    ////
+        //if (itemID == "Spores.10")
+        //{
+        //    if (Game.coinCount >= 20)
+        //    {
+	    //        purchaseAnimation.SetInteger("state", 1);
+	    //        //
+        //        sporeImage.gameObject.SetActive(true);
+        //        costText.text = "20";
+        //        quantityText.text = "10x";
+        //    }
+        //} else if (itemID == "Spores.30")
+        //{
+        //    if (Game.coinCount >= 50)
+        //    {
+        //        purchaseAnimation.SetInteger("state", 1);
+        //        sporeImage.gameObject.SetActive(true);
+        //        costText.text = "50";
+        //        quantityText.text = "30x";
+        //    }
+        //}
+        //else if (itemID == "Spores.80")
+        //{
+        //    if (Game.coinCount >= 100)
+        //    {
+        //        purchaseAnimation.SetInteger("state", 1);
+        //        sporeImage.gameObject.SetActive(true);
+        //        costText.text = "100";
+        //        quantityText.text = "80x";
+        //    }
+        //}
+        //else if (itemID == "Spores.500")
+        //{
+        //    if (Game.coinCount >= 500)
+        //    {
+        //        purchaseAnimation.SetInteger("state", 1);
+        //        sporeImage.gameObject.SetActive(true);
+        //        costText.text = "500";
+        //        quantityText.text = "500x";
+        //    }
+        //}
     }
 }
