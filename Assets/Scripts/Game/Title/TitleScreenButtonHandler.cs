@@ -13,7 +13,7 @@ public class TitleScreenButtonHandler : MonoBehaviour
         string path = Application.persistentDataPath + "/save.txt";
         if (File.Exists(path))
         {
-            SceneManager.LoadScene("StarterHouse");
+	        SceneManager.LoadScene("L1");
         }
     }
 
@@ -26,7 +26,7 @@ public class TitleScreenButtonHandler : MonoBehaviour
         }
         else
         {
-	        SceneManager.LoadScene("StarterHouse");
+	        SceneManager.LoadScene("L1");
         }
     }
 }

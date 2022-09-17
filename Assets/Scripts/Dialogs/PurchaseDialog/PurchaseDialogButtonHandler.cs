@@ -54,72 +54,72 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
 
     public void OnPurchaseButtonClicked()
 	{
-		Debug.Log("PurchaseDialog : OnPurchaseClicked()");
-        foreach (Image i in images)
-        {
-            if(i.gameObject.activeSelf == true)
-            {
-                if (item.text.StartsWith("Spore"))
-                {
-                    int cost = int.Parse(items[0].costText.text);
-                    int quant = int.Parse(items[0].quantityText.text.Split('x')[0]);
+		//Debug.Log("PurchaseDialog : OnPurchaseClicked()");
+        //foreach (Image i in images)
+        //{
+        //    if(i.gameObject.activeSelf == true)
+        //    {
+        //        if (item.text.StartsWith("Spore"))
+        //        {
+        //            int cost = int.Parse(items[0].costText.text);
+        //            int quant = int.Parse(items[0].quantityText.text.Split('x')[0]);
 
-                    if (Game.coinCount >= cost)
-                    {
-                        Game.counter.coinChange(-cost);
-                        Game.counter.sporeChange(quant);
-                        OnCloseButtonClicked();
-                    }
-                }
-                else if (item.text == "Box")
-                {
-                    if (Game.coinCount >= 300)
-                    {
-                        Game.counter.coinChange(-300);
+        //            if (Game.coinCount >= cost)
+        //            {
+        //                Game.counter.coinChange(-cost);
+        //                Game.counter.sporeChange(quant);
+        //                OnCloseButtonClicked();
+        //            }
+        //        }
+        //        else if (item.text == "Box")
+        //        {
+        //            if (Game.coinCount >= 300)
+        //            {
+        //                Game.counter.coinChange(-300);
 
-                        Vector3 pos = Game.boxPlaceholder.transform.position;
-                        Game.boxPlaceholder.transform.position = new Vector3(pos.x + 141, pos.y);
-                        Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), Game.boxes[0].transform.parent, false);
-                        newBox.transform.position = pos;
-                        newBox.SetProgress(0);
-                        newBox.SetState(BoxState.Empty);
-                        newBox.SetSprite(BoxSprite.Empty);
-                        newBox.SetBubbleSprite(BoxBubbleSprite.None);
-                        Game.boxes.Add(newBox);
+        //                Vector3 pos = Game.boxPlaceholder.transform.position;
+        //                Game.boxPlaceholder.transform.position = new Vector3(pos.x + 141, pos.y);
+        //                Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), Game.boxes[0].transform.parent, false);
+        //                newBox.transform.position = pos;
+        //                newBox.SetProgress(0);
+        //                newBox.SetState(BoxState.Empty);
+        //                newBox.SetSprite(BoxSprite.Empty);
+        //                newBox.SetBubbleSprite(BoxBubbleSprite.None);
+        //                Game.boxes.Add(newBox);
 
-                        if (Game.boxes.Count == 4)
-                            Game.boxPlaceholder.gameObject.SetActive(false);
+        //                if (Game.boxes.Count == 4)
+        //                    Game.boxPlaceholder.gameObject.SetActive(false);
 
-                        SaveSystem.SaveGame();
-                        OnCloseButtonClicked();
-                    }
-                }
-                else if (item.text == "Jar")
-                {
-                    if (Game.coinCount >= 100)
-                    {
-                        Game.counter.coinChange(-100);
+        //                SaveSystem.SaveGame();
+        //                OnCloseButtonClicked();
+        //            }
+        //        }
+        //        else if (item.text == "Jar")
+        //        {
+        //            if (Game.coinCount >= 100)
+        //            {
+        //                Game.counter.coinChange(-100);
 
-                        Vector3 pos = Game.jarPlaceholder.transform.position;
-                        Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 150);
-                        Jar newJar = Instantiate<Jar>(FindObjectOfType<Jar>(), Game.jars[0].transform.parent, false);
-                        newJar.transform.position = pos;
-                        newJar.SetProgress(0);
-                        newJar.SetState(JarState.Empty);
-                        newJar.SetSprite(JarSprite.Empty);
-                        newJar.SetBubbleSprite(JarBubbleSprite.Substrate);
-                        newJar.ShakeAnimation();
-                        Game.jars.Add(newJar);
+        //                Vector3 pos = Game.jarPlaceholder.transform.position;
+        //                Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 150);
+        //                Jar newJar = Instantiate<Jar>(FindObjectOfType<Jar>(), Game.jars[0].transform.parent, false);
+        //                newJar.transform.position = pos;
+        //                newJar.SetProgress(0);
+        //                newJar.SetState(JarState.Empty);
+        //                newJar.SetSprite(JarSprite.Empty);
+        //                newJar.SetBubbleSprite(JarBubbleSprite.Substrate);
+        //                newJar.ShakeAnimation();
+        //                Game.jars.Add(newJar);
                         
-                        if (Game.jars.Count == 3)
-                            Game.jarPlaceholder.gameObject.SetActive(false);
+        //                if (Game.jars.Count == 3)
+        //                    Game.jarPlaceholder.gameObject.SetActive(false);
 
-                        SaveSystem.SaveGame();
-                        OnCloseButtonClicked();
-                    }
-                }
-            }
-        }
+        //                SaveSystem.SaveGame();
+        //                OnCloseButtonClicked();
+        //            }
+        //        }
+        //    }
+        //}
     }
     
 	//public void UpdateCostColor()
