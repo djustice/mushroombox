@@ -38,7 +38,7 @@ public class TitleScreen : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            SceneManager.LoadScene("StarterHouse");
+	        SceneManager.LoadScene("L1");
         }
     }
 }
