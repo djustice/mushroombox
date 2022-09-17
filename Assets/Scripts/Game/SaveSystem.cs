@@ -1,9 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-
+using Unity.VisualScripting;
+ 
+[IncludeInSettings(true)]
 public static class SaveSystem
 {
     public static void SaveGame()

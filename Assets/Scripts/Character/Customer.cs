@@ -45,7 +45,8 @@ public class Customer : Character
     }
 
     IEnumerator WalkPath()
-    {
+	{
+		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
         yield return StartCoroutine("MoveUpTo", points[2]);
         SetDirection(Direction.Left);
