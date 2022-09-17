@@ -9847,7 +9847,7 @@ GameObject:
   - component: {fileID: 502881413}
   m_Layer: 0
   m_Name: ItemID
-  m_TagString: Untagged
+  m_TagString: Purchase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11443,7 +11443,7 @@ GameObject:
   - component: {fileID: 712202538}
   m_Layer: 0
   m_Name: CostText
-  m_TagString: Untagged
+  m_TagString: Purchase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11576,7 +11576,7 @@ GameObject:
   - component: {fileID: 730504632}
   - component: {fileID: 730504635}
   - component: {fileID: 730504634}
-  - component: {fileID: 730504633}
+  - component: {fileID: 730504636}
   m_Layer: 0
   m_Name: TestingButton
   m_TagString: Untagged
@@ -11604,35 +11604,6 @@ RectTransform:
   m_AnchoredPosition: {x: -670, y: -143}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &730504633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730504631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SettingsDialogHandler, Assembly-CSharp
-          m_MethodName: OnTestButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &730504634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11671,6 +11642,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730504631}
   m_CullTransparentMesh: 1
+--- !u!61 &730504636
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730504631}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08148956, y: 3.022667}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 79.745056, y: 99.73418}
+  m_EdgeRadius: 0
 --- !u!1 &756987128
 GameObject:
   m_ObjectHideFlags: 0
@@ -12126,7 +12123,7 @@ GameObject:
   - component: {fileID: 815528851}
   m_Layer: 0
   m_Name: QuantityText
-  m_TagString: Untagged
+  m_TagString: Purchase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16606,7 +16603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Close
-      Shop Dialog","summary":null,"pan":{"x":313.7876,"y":-148.7088},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-156.0,"y":-156.0},"guid":"a4c1d0bb-4fd5-4556-b479-bf507b76c01c","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
+      Shop Dialog","summary":null,"pan":{"x":190.4543,"y":-27.59769},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-156.0,"y":-156.0},"guid":"a4c1d0bb-4fd5-4556-b479-bf507b76c01c","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
       Shop Button","$type":"System.String"},"target":null},"position":{"x":48.0,"y":-132.0},"guid":"b5fd3694-5670-4570-81a6-8a48317f0480","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"CloseShopDialogButton","$type":"System.String"}},"position":{"x":48.0,"y":-252.0},"guid":"35bfd21e-aec6-447f-8af2-91fb4703271f","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"20f9a0d2-9652-406d-bf69-a9cdc5e2fe2a","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"703b1a86-8bfc-4549-b675-7644004a5dfd","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &1365333540
@@ -17813,7 +17810,7 @@ MonoBehaviour:
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Goals
       Dialog Mask","summary":null,"pan":{"x":96.25694,"y":63.46302},"zoom":0.8,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-396.0,"y":-72.0},"guid":"6edafab4-fc8a-498c-b20d-d7c7709fa0cf","$version":"A","$type":"Unity.VisualScripting.OnMouseUp","$id":"10"},{"argumentCount":0,"defaultValues":{"name":{"$content":"Retract
-      Goals Button","$type":"System.String"},"target":null},"position":{"x":24.0,"y":-60.0},"guid":"f281aa6c-97aa-4cfd-989f-f0eff47e275b","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"GoalsButton","$type":"System.String"}},"position":{"x":-204.0,"y":-60.0},"guid":"229544f8-efb9-45c7-991d-c88fb3ea14b5","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"f96178b4-eb70-4f18-8d01-6fa0ea8488ad","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"exit","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"74558475-5185-4a6b-8041-40b877fcb191","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
+      Goals Button","$type":"System.String"},"target":null},"position":{"x":24.0,"y":-60.0},"guid":"f281aa6c-97aa-4cfd-989f-f0eff47e275b","$version":"A","$type":"Unity.VisualScripting.TriggerCustomEvent","$id":"12"},{"chainable":false,"member":{"name":"Find","parameterTypes":["System.String"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"%name":{"$content":"GoalsButton","$type":"System.String"}},"position":{"x":-204.0,"y":-60.0},"guid":"229544f8-efb9-45c7-991d-c88fb3ea14b5","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"f96178b4-eb70-4f18-8d01-6fa0ea8488ad","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"exit","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"74558475-5185-4a6b-8041-40b877fcb191","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"8d6c057b-208e-48ff-9c89-8974a8aced5a","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &1456189523
 MonoBehaviour:
@@ -18185,6 +18182,8 @@ GameObject:
   - component: {fileID: 1525358409}
   - component: {fileID: 1525358411}
   - component: {fileID: 1525358412}
+  - component: {fileID: 1525358414}
+  - component: {fileID: 1525358413}
   m_Layer: 0
   m_Name: PurchaseDialog
   m_TagString: Untagged
@@ -18308,6 +18307,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1525358413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525358407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: ea018d7a4a1934c4c9d74504ff9edc33, type: 2}
+--- !u!114 &1525358414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525358407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &1556683581
 GameObject:
   m_ObjectHideFlags: 0
@@ -19222,6 +19252,7 @@ GameObject:
   - component: {fileID: 1643952247}
   - component: {fileID: 1643952246}
   - component: {fileID: 1643952244}
+  - component: {fileID: 1643952248}
   m_Layer: 0
   m_Name: PurchaseButton
   m_TagString: Untagged
@@ -19316,6 +19347,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643952242}
   m_CullTransparentMesh: 1
+--- !u!61 &1643952248
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643952242}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6397476, y: 1.6292}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 178.83217, y: 176.72894}
+  m_EdgeRadius: 0
 --- !u!1 &1692998249
 GameObject:
   m_ObjectHideFlags: 0
@@ -36501,6 +36558,7 @@ GameObject:
   - component: {fileID: 2118047893}
   - component: {fileID: 2118047892}
   - component: {fileID: 2118047891}
+  - component: {fileID: 2118047894}
   m_Layer: 0
   m_Name: PurchaseDialogMaskTop
   m_TagString: Untagged
@@ -36595,6 +36653,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118047889}
   m_CullTransparentMesh: 1
+--- !u!61 &2118047894
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118047889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.9453125, y: 2.9313965}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1391.8945, y: 1726.5952}
+  m_EdgeRadius: 0
 --- !u!1 &2123638961
 GameObject:
   m_ObjectHideFlags: 0
