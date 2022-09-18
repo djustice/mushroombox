@@ -74,10 +74,11 @@ public class Character : MonoBehaviour
             transform.position = Vector3.MoveTowards(origin, destination, accel);
             accel += speed * Time.deltaTime;
 
-            int diff = (int)transform.position.x - (int)dest.x;
+	        int diff = (int)transform.position.y - (int)dest.y;
             if (diff >= -1 && diff <= 1)
             {
-                yield break;
+            	SetIdle(true);
+	            yield break;
             }
 
             yield return null;
@@ -119,9 +120,10 @@ public class Character : MonoBehaviour
             transform.position = Vector3.MoveTowards(origin, destination, accel);
             accel += speed * Time.deltaTime;
 
-            int diff = (int)transform.position.x - (int)dest.x;
+	        int diff = (int)transform.position.y - (int)dest.y;
             if (diff >= -1 && diff <= 1)
             {
+	            SetIdle(true);
                 yield break;
             }
 
@@ -181,6 +183,7 @@ public class Character : MonoBehaviour
             int diff = (int)transform.position.x - (int)dest.x;
             if (diff >= -1 && diff <= 1)
             {
+            	SetIdle(true);
                 yield break;
             }
 
@@ -226,6 +229,7 @@ public class Character : MonoBehaviour
 	        int diff = (int)transform.position.x - (int)dest.x;
 	        if (diff >= -1 && diff <= 1) 
 	        {
+		        SetIdle(true);
 	        	yield break;
 	        }
 

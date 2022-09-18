@@ -69,7 +69,7 @@ public class Game : MonoBehaviour
             for (int i = 1; i < loadData.jarCount; i++)
             {
                 Vector3 pos = Game.jarPlaceholder.transform.position;
-                Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 150);
+	            Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 180);
                 Jar newJar = Instantiate<Jar>(FindObjectOfType<Jar>(), Game.jars[0].transform.parent, false);
                 newJar.transform.position = pos;
                 Game.jars.Add(newJar);
@@ -95,7 +95,7 @@ public class Game : MonoBehaviour
             for (int i = 1; i < loadData.boxCount; i++)
             {
                 Vector3 pos = Game.boxPlaceholder.transform.position;
-                Game.boxPlaceholder.transform.position = new Vector3(pos.x + 141, pos.y);
+	            Game.boxPlaceholder.transform.position = new Vector3(pos.x + 185, pos.y);
                 Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), Game.boxes[0].transform.parent, false);
                 newBox.transform.position = pos;
                 Game.boxes.Add(newBox);

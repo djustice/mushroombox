@@ -61,9 +61,13 @@ public class Customer : Character
         {
             Game.player.MoveCakes();
         }
+		if (Game.player.boxQueue.Count > 0)
+		{
+			Game.player.WalkToBoxes();
+		}
         yield return StartCoroutine("MoveDownTo", points[3]);
         yield return StartCoroutine("MoveLeftTo", points[4]);
-        transform.position = startingPos;
+        transform.position = points[0];
         isMoving = false;
     }
 

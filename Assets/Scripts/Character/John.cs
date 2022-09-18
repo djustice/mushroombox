@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +27,8 @@ public class John : Character
     }
 
     IEnumerator WalkEnterPath()
-    {
+	{
+		transform.position = new Vector2(Screen.width + 400, enterPathNodes[0].transform.position.y);
         yield return StartCoroutine("MoveLeftTo", enterPathNodes[0].transform.position);
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine("MoveUpTo", enterPathNodes[0].transform.position);
