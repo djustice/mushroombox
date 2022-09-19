@@ -118,7 +118,11 @@ public class Game : MonoBehaviour
         {
         	if (doIntro == true) {
 	        	john.Enter();
+	        	shopButton.SetActive(false);
+	        	goalsButton.SetActive(false);
+	        	settingsButton.SetActive(false);
 	        	GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanIn");
+	        	
         	}
         }
         
@@ -132,6 +136,14 @@ public class Game : MonoBehaviour
         
 	    StartCoroutine("CustomerLoop");
     }
+
+	IEnumerator WaitForIntro() 
+	{
+		yield return new WaitForSeconds(8);
+		uiButtons[0].SetActive(true);
+		uiButtons[1].SetActive(true);
+		uiButtons[2].SetActive(true);
+	}
 
 	IEnumerator CustomerLoop() 
 	{

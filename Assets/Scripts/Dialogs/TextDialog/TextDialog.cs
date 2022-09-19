@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,10 @@ public class TextDialog : MonoBehaviour
 
     public void CloseDialog()
     {
-        _animator.SetBool("Show", false);
+	    _animator.SetBool("Show", false);
+	    Game.shopButton.SetActive(true);
+	    Game.goalsButton.SetActive(true);
+	    Game.settingsButton.SetActive(true);
         isActive = false;
     }
 
