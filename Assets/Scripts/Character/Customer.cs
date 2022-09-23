@@ -30,10 +30,11 @@ public class Customer : Character
     IEnumerator CheckForMushrooms()
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 3f));
-
+Debug.Log(this.name + " check");
         if (Game.mushroomCount > 0)
         {
-            if (Vector3.Distance(transform.position, startingPos) < 0.5)
+            if (Vector3.Distance(transform.position, startingPos) < 0.5 ||
+                Vector3.Distance(transform.position, points[0]) < 0.5)
             {
                 if (!isMoving)
                 {
@@ -46,8 +47,10 @@ public class Customer : Character
 
     IEnumerator WalkPath()
 	{
+        Debug.Log(this.name + " walk");
 		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
+        Debug.Log(this.name + " walk @ 1");
         yield return StartCoroutine("MoveUpTo", points[2]);
         SetDirection(Direction.Left);
         yield return StartCoroutine("WaitOnPlayer");
@@ -69,6 +72,7 @@ public class Customer : Character
         yield return StartCoroutine("MoveLeftTo", points[4]);
         transform.position = points[0];
         isMoving = false;
+        Debug.Log(this.name + " walk done");
     }
 
     IEnumerator WaitOnPlayer()
