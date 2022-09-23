@@ -15,7 +15,7 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
     public void Start()
     {
         item = purchaseDialog.GetComponentInChildren<TextMeshProUGUI>();
-        StartCoroutine("StartDelayed", 2);
+        //StartCoroutine("StartDelayed", 2);
     }
 
     IEnumerator StartDelayed(int s)
