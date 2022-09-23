@@ -10,10 +10,10 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /*DoNot*/
+/*DontShip*/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
-/Assets/Plugins/
 /Assets/Editor/
 /Assets/SuperEditor/
 /Assets/AutoSave/
@@ -58,7 +58,9 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
+/mbox*/
 
 # Crashlytics generated file
 crashlytics-build.properties
