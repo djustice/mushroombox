@@ -56,6 +56,7 @@ public class John : Character
         if (_textDialog.isActive == false)
         {
             GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
+            CustomEvent.Trigger(this.gameObject, "John Done");
             StartCoroutine("WalkExitPath");
             Game.player.SetDirection(Direction.Down);
             Game.counter.coinChange(100, true);
