@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class Gyro : MonoBehaviour
 {
+	public float speed = 0.5f;
+	public float offsetX;
+    public float offsetY;
+	public Material mat;
+
     void Start()
     {
 	    Input.gyro.enabled = true;
+		mat = GetComponent<Renderer>().material;
     }
 
     void Update()
 	{
-	    Quaternion q = Input.gyro.attitude;
-		float moveX = q.x * 100;
-		float moveY = q.y * 100;
-		moveY = moveY - 25;
-		transform.Translate(new Vector3(moveX, moveY, 0));
-		if (transform.position.x < 1830)
-			transform.position = new Vector3(1830, transform.position.y, 0);
-		if (transform.position.x > 1900)
-			transform.position = new Vector3(1900, transform.position.y, 0);
-		if (transform.position.y > 1640)
-			transform.position = new Vector3(transform.position.x, 1640, 0);
-		if (transform.position.y < 1550)
-			transform.position = new Vector3(transform.position.x, 1550, 0);
+        float moveX = -(Input.gyro.rotationRateUnbiased.x * 5);
+        float moveY = -(Input.gyro.rotationRateUnbiased.y * 5);
+		offsetX += (Time.deltaTime * speed * moveX) / 10f;
+        offsetY += (Time.deltaTime * speed * moveY) / 10f;
+		mat.SetTextureOffset("_MainTex", new Vector2(offsetY, offsetX));
 
     }
 }

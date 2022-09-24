@@ -30,7 +30,6 @@ public class Game : MonoBehaviour
 	
 	public bool doIntro = true;
 	public bool skipToL2 = true;
-    
 
     void Start()
     {
@@ -128,9 +127,7 @@ public class Game : MonoBehaviour
         
 	    // if (skipToL2 == true)
 	    // {
-	    // 	Debug.Log("???");
 		//    GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanLevel2");
-		//    //GameObject.Find("ShedGround").GetComponent<Animator>().SetTrigger("Move");
 		//    Input.gyro.enabled = true;
 	    // }
         
