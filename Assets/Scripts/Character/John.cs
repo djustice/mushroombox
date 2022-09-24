@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class John : Character
 {
@@ -54,6 +55,7 @@ public class John : Character
 
         if (_textDialog.isActive == false)
         {
+            GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
             StartCoroutine("WalkExitPath");
             Game.player.SetDirection(Direction.Down);
             Game.counter.coinChange(100, true);
