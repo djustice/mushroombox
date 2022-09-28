@@ -18,8 +18,8 @@ public class Gyro : MonoBehaviour
 
     void Update()
 	{
-        float moveX = -(Input.gyro.rotationRateUnbiased.x * 5);
-        float moveY = -(Input.gyro.rotationRateUnbiased.y * 5);
+        float moveX = (Input.gyro.rotationRateUnbiased.x * 5);
+        float moveY = (Input.gyro.rotationRateUnbiased.y * 5);
 		offsetX += (Time.deltaTime * speed * moveX) / 10f;
         offsetY += (Time.deltaTime * speed * moveY) / 10f;
 		mat.SetTextureOffset("_MainTex", new Vector2(offsetY, offsetX));

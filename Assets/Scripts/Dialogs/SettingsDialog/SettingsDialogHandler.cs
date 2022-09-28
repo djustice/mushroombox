@@ -33,7 +33,7 @@ public class SettingsDialogHandler : MonoBehaviour
     public void OnRestartGameMouseUp()
     {
         SceneManager.LoadScene("TitleScene");
-        gameObject.SetActive(false);
+//        gameObject.SetActive(false);
     }
 
 	// TODO: to VS
