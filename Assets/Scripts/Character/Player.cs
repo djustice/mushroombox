@@ -72,7 +72,7 @@ public class Player : Character
     IEnumerator WalkJarToBox(Jar jar)
     {
         Vector3 jarPos = new Vector2(jar.transform.position.x + 100, jar.transform.position.y + 16);
-	    Debug.Log("j: ");
+
         Box nextBox = Game.getNextAvailBox();
         if (nextBox != null)
         {
@@ -85,7 +85,6 @@ public class Player : Character
             jar.ResetJar();
 	        yield return StartCoroutine("MoveTo", destBoxPos);
             
-	        Debug.Log("j: " + Vector2.Distance(transform.position, destBoxPos));
             if (Vector2.Distance(transform.position, destBoxPos) > 50)
             {
                 yield return StartCoroutine("MoveUpTo", destBoxPos);
