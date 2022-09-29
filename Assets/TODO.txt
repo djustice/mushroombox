@@ -1,14 +1,17 @@
 #1
 : fix john sprite
 : blur shop background
+: fix purchase dialog accept/cancel buttons
 : fade blur masks in/out
 : fade scene in/out
 : add tutorial after john (vs)
 
 L1
+: fix player y position on jar move 
 : jars queue non-empty at desk (bug?)
-: ui for new/completed goals
 
+L1.5
+: close masks dont work after moving camera 
 
 later:
 : audio:
