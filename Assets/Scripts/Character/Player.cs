@@ -71,7 +71,7 @@ public class Player : Character
 
     IEnumerator WalkJarToBox(Jar jar)
     {
-        Vector3 jarPos = new Vector2(jar.transform.position.x + 100, jar.transform.position.y);
+        Vector3 jarPos = new Vector2(jar.transform.position.x + 100, jar.transform.position.y + 16);
 	    Debug.Log("j: ");
         Box nextBox = Game.getNextAvailBox();
         if (nextBox != null)
