@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TitleScreen : MonoBehaviour
 {
     public GameObject newGameDialog;
+    public Animator fadeAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,12 @@ public class TitleScreen : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-	        SceneManager.LoadScene("L1");
+            fadeAnim.SetTrigger("FadeOut");
         }
+    }
+
+    public void LoadL1()
+    {
+        SceneManager.LoadScene("L1");
     }
 }

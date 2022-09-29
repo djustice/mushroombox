@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class TitleScreenButtonHandler : MonoBehaviour
 {
     public GameObject newGameDialog;
+    public Animator fadeAnim;
 
     public void OnContinueClicked()
     {
         string path = Application.persistentDataPath + "/save.txt";
         if (File.Exists(path))
         {
-	        SceneManager.LoadScene("L1");
+            fadeAnim.SetTrigger("FadeOut");
         }
     }
 
@@ -26,7 +27,11 @@ public class TitleScreenButtonHandler : MonoBehaviour
         }
         else
         {
-	        SceneManager.LoadScene("L1");
+            fadeAnim.SetTrigger("FadeOut");
         }
+    }
+
+    public void LoadL1() {
+        SceneManager.LoadScene("L1");
     }
 }
