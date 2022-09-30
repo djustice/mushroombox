@@ -137,11 +137,13 @@ public class Player : Character
 	    
         if (boxQueue.Count == 0)
         {
+            Debug.Log("Player : Harvest Box : boxQueue.Count : " + boxQueue.Count);
             if (jarQueue.Count > 0)
             {
+                Debug.Log("Player : Harvest Box : jarQueue.Count : " + jarQueue.Count);
                 yield return StartCoroutine("WalkJarToBox", jarQueue.Dequeue());
             }
-
+            Debug.Log("Player : Harvest Box : Done");
             yield return StartCoroutine("MoveTo", startingPos);
             yield return StartCoroutine("MoveDownTo", startingPos);
             isMoving = false;
