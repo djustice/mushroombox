@@ -19,12 +19,12 @@ public class TitleScreen : MonoBehaviour
         if (!File.Exists(path))
         {
 	        buttons[0].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.6f);
-	        buttons[1].GetComponent<Image>().color = new Color(0.5f, 0f, 0f, 0.6f);
+	        buttons[1].GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.6f);
         }
         else
         {
-            buttons[0].GetComponent<Image>().color = new Color(0.5f, 0f, 0f, 0.6f);
-            buttons[1].GetComponent<Image>().color = new Color(0.5f, 0f, 0f, 0.6f);
+            buttons[0].GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.6f);
+            buttons[1].GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.6f);
         }
     }
 
