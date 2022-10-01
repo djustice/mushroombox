@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class TitleScreen : MonoBehaviour
 {
     public GameObject newGameDialog;
+    public Slider slider;
+    public AsyncOperation scene;
+    public bool isLoaded = false;
     public Animator fadeAnim;
 
     // Start is called before the first frame update
@@ -39,12 +42,37 @@ public class TitleScreen : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            fadeAnim.SetTrigger("FadeOut");
+            StartCoroutine("LoadL1Co");
         }
     }
 
     public void LoadL1()
     {
-        SceneManager.LoadScene("L1");
+        if (isLoaded) {
+            scene.allowSceneActivation = true;
+        } else {
+            Debug.Log("C");
+        }
+    }
+
+    IEnumerator LoadL1Co()
+    {
+        scene = SceneManager.LoadSceneAsync("L1");
+//        scene.allowSceneActivation = false;
+
+        while (!scene.isDone)
+        {
+
+            float progress = Mathf.Clamp01(scene.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
+
+
+        Debug.Log("A");
+        fadeAnim.SetTrigger("FadeOut");
+        Debug.Log("B");
+        yield return new WaitForSeconds(1);
+        scene.allowSceneActivation = true;
     }
 }
