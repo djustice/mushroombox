@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class GameData
 {
     public int coinCount;
@@ -13,12 +9,16 @@ public class GameData
     public int boxCount;
     public int[] boxProgresses;
     public int[] boxStates;
+    public int goalCount;
+    public int[] goalValues;
+    public int[] goalMaximums;
 
     public GameData()
     {
         coinCount = Game.coinCount;
         mushroomCount = Game.mushroomCount;
         sporeCount = Game.sporeCount;
+        
         jarCount = Game.jars.Count;
         jarProgresses = new int[jarCount];
         int jpi = 0;
@@ -49,5 +49,15 @@ public class GameData
             boxStates[bsi] = (int)Game.boxes[bsi].state;
             bsi++;
         }
+
+        // goalCount = Game.goals.Count;
+        // goalValues = new int[goalCount];
+        // goalMaximums = new int[goalCount];
+        // int goalIndex = 0;
+        // while (goalIndex < goalCount)
+        // {
+        //     goalValues[goalIndex] = (int)Game.goals[goalIndex].Value;
+        //     goalMaximums[goalIndex] = (int)Game.goals[goalIndex].Maximum;
+        // }
     }
 }

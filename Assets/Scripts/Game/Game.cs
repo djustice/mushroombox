@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     public static Player player;
 	public static John john;
 	public Customer[] customers;
+    public bool pauseCustomers = true;
     public static CollectibleCounter counter;
     public static int coinCount = 0;
     public static int mushroomCount = 0;
@@ -27,6 +28,9 @@ public class Game : MonoBehaviour
 	public static GameObject shopButton;
 	public static GameObject goalsButton;
 	public static GameObject settingsButton;
+    
+    public static List<Goal> goals;
+    public static int goal;
 	
 	public bool doIntro = true;
 	public bool skipToL2 = true;
@@ -57,6 +61,13 @@ public class Game : MonoBehaviour
 	    shopButton = uiButtons[0];
 	    goalsButton = uiButtons[1];
 	    settingsButton = uiButtons[2];
+
+        // goals = new List<Goal>();
+        // foreach (GoalDisplay g in FindObjectsOfType<GoalDisplay>())
+        // {
+        //     goals.Add(g.goal);
+        //     Debug.Log(g.goal.Text);
+        // }
 
         if (File.Exists(Application.persistentDataPath + "/save.txt"))
         {
@@ -110,6 +121,13 @@ public class Game : MonoBehaviour
                 Game.boxes[i].SetProgress(loadData.boxProgresses[i]);
                 Game.boxes[i].SetState(loadData.boxStates[i], true);
             }
+
+            // for (int i = 0; i < loadData.goalCount; i++)
+            // {
+            //     Game.goals[i].Value = loadData.goalValues[i];
+            //     Game.goals[i].Maximum = loadData.goalMaximums[i];
+            //     goal = i;
+            // }
 
             SaveSystem.SaveGame();
         }

@@ -51,6 +51,8 @@ Debug.Log(this.name + " check");
 		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
         Debug.Log(this.name + " walk @ 1");
+        Game.player.customerWaiting = true;
+        Game.player.WalkToDesk();
         yield return StartCoroutine("MoveUpTo", points[2]);
         SetDirection(Direction.Left);
         yield return StartCoroutine("WaitOnPlayer");
@@ -60,6 +62,7 @@ Debug.Log(this.name + " check");
         yield return StartCoroutine("ShowCoinBubble");
         yield return StartCoroutine("ProcessSale");
         yield return StartCoroutine("HideCheckBubble");
+        Game.player.customerWaiting = false;
         if (Game.player.jarQueue.Count > 0)
         {
             Game.player.MoveCakes();
