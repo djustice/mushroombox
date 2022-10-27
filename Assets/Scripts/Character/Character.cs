@@ -153,18 +153,22 @@ public class Character : MonoBehaviour
 
     public void WalkToThenStop(Vector3 dest)
     {
-        StartCoroutine("IWalkToThenStop", dest);
+        if (!isMoving)
+            StartCoroutine("IWalkToThenStop", dest);
     }
 
     IEnumerator IWalkToThenStop(Vector3 dest)
     {
+        isMoving = true;
         yield return StartCoroutine("IMoveTo", dest);
         SetDirection(Direction.Down);
+        isMoving = false;
     }
 
     public void MoveTo(Vector3 dest)
     {
-        StartCoroutine("IMoveTo", dest);
+        if (!isMoving)
+            StartCoroutine("IMoveTo", dest);
     }
 
     IEnumerator IMoveTo(Vector3 dest)
@@ -254,5 +258,6 @@ public class Character : MonoBehaviour
         }
 
         SetIdle(true);
+        isMoving = false;
     }
 }

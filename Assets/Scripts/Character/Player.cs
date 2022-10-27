@@ -83,8 +83,10 @@ public class Player : Character
             nextBox.isTarget = true;
             Vector3 destBoxPos = new Vector3(nextBox.transform.position.x, nextBox.transform.position.y - 60);
 
+            isMoving = true;
             yield return StartCoroutine("IMoveTo", jarPos);
-            yield return StartCoroutine("MoveLeftTo", jarPos);
+            // yield return StartCoroutine("MoveLeftTo", jarPos);
+            SetDirection(Direction.Left);
             yield return new WaitForSeconds(1f);
             jar.ResetJar();
 	        yield return StartCoroutine("IMoveTo", destBoxPos);
@@ -118,6 +120,10 @@ public class Player : Character
             }
 
             isMoving = false;
+        }
+        else if (nextBox == null)
+        {
+            //TODO notify user: no box available
         }
     }
 
