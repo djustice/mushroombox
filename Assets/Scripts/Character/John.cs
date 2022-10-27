@@ -88,7 +88,6 @@ public class John : Character
         yield return StartCoroutine("MoveRightTo", exitPathNodes[1].transform.position);
         yield return new WaitForSeconds(0.8f);
         yield return StartCoroutine("MoveLeftTo", exitPathNodes[2].transform.position);
-        transform.position = startingPos;
         isMoving = false;
     }
 }

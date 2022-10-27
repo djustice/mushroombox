@@ -73,7 +73,7 @@ Debug.Log(this.name + " check");
 		}
         yield return StartCoroutine("MoveDownTo", points[3]);
         yield return StartCoroutine("MoveLeftTo", points[4]);
-        transform.position = points[0];
+        // transform.position = points[0];
         isMoving = false;
         Debug.Log(this.name + " walk done");
     }
