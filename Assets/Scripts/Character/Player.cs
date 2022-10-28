@@ -124,7 +124,20 @@ public class Player : Character
         else if (nextBox == null)
         {
             //TODO notify user: no box available
+            yield return StartCoroutine("INotifyNoBoxAvailable");
         }
+    }
+
+    public void NotifyNoBoxAvailable()
+    {
+        StartCoroutine("INotifyNoBoxAvailable");
+    }
+
+    IEnumerator INotifyNoBoxAvailable()
+    {
+        bubble.sprite = bubbleSprites[3];
+        yield return new WaitForSeconds(1);
+        bubble.sprite = bubbleSprites[0];
     }
 
     IEnumerator HarvestBox(Box box)

@@ -268,6 +268,7 @@ public class Jar : MonoBehaviour
 	        if (nextBox == null) 
 	        {
 		        Debug.Log("Jar /" + this.name + "/ : OnMouseUp : no empty box avail");
+                Game.player.NotifyNoBoxAvailable();
 		        return;
 	        }
 

@@ -29,6 +29,8 @@ public class Game : MonoBehaviour
 	public static GameObject goalsButton;
 	public static GameObject settingsButton;
 
+    public static WalkableArea walkableArea;
+
     public Tutorial tutorial;
     
     public static List<Goal> goals;
@@ -41,6 +43,7 @@ public class Game : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
 	    john = FindObjectOfType<John>();
+        walkableArea = FindObjectOfType<WalkableArea>();
 
         Placeholder[] placeholders = FindObjectsOfType<Placeholder>();
         foreach (Placeholder placeholder in placeholders)

@@ -48,6 +48,7 @@ Debug.Log(this.name + " check");
     IEnumerator WalkPath()
 	{
         Debug.Log(this.name + " walk");
+        Game.walkableArea.gameObject.SetActive(false);
 		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
         Debug.Log(this.name + " walk @ 1");
@@ -63,6 +64,7 @@ Debug.Log(this.name + " check");
         yield return StartCoroutine("ProcessSale");
         yield return StartCoroutine("HideCheckBubble");
         Game.player.customerWaiting = false;
+        Game.walkableArea.gameObject.SetActive(true);
         if (Game.player.jarQueue.Count > 0)
         {
             Game.player.MoveCakes();
