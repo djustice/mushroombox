@@ -7,6 +7,8 @@ public class John : Character
 {
     public GameObject[] enterPathNodes;
     public GameObject[] exitPathNodes;
+    public Tutorial tutorial;
+    public GameObject walkableArea;
     private TextDialog _textDialog;
 
     public void Start()
@@ -29,6 +31,7 @@ public class John : Character
 
     IEnumerator WalkEnterPath()
 	{
+        walkableArea.SetActive(false);
 		transform.position = new Vector2(Screen.width + 400, enterPathNodes[0].transform.position.y);
         yield return StartCoroutine("MoveLeftTo", enterPathNodes[0].transform.position);
         yield return new WaitForSeconds(0.5f);
@@ -57,11 +60,13 @@ public class John : Character
         {
             GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
             CustomEvent.Trigger(this.gameObject, "John Done");
-            StartCoroutine("WalkExitPath");
             Game.player.SetDirection(Direction.Down);
             Game.counter.coinChange(100, true);
             Game.counter.sporeChange(10, true);
             SaveSystem.SaveGame();
+            yield return StartCoroutine("WalkExitPath");
+            tutorial.StartTutorial();
+
             yield break;
         }
 

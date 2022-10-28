@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
 	public static GameObject shopButton;
 	public static GameObject goalsButton;
 	public static GameObject settingsButton;
+
+    public Tutorial tutorial;
     
     public static List<Goal> goals;
     public static int goal;
