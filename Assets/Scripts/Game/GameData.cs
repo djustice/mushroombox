@@ -1,17 +1,22 @@
+// default to 0 for old savefile versions
+
 public class GameData
 {
-    public int coinCount;
-    public int mushroomCount;
-    public int sporeCount;
-    public int jarCount;
-    public int[] jarProgresses;
-    public int[] jarStates;
-    public int boxCount;
-    public int[] boxProgresses;
-    public int[] boxStates;
-    public int goalCount;
-    public int[] goalValues;
-    public int[] goalMaximums;
+    public int coinCount = 0;
+    public int coinCountTotal = 0;
+    public int mushroomCount = 0;
+    public int mushroomCountTotal = 0;
+    public int sporeCount = 0;
+    public int sporeCountTotal = 0;
+    public int jarCount = 0;
+    public int[] jarProgresses = new int[0];
+    public int[] jarStates = new int[0];
+    public int boxCount = 0;
+    public int[] boxProgresses = new int[0];
+    public int[] boxStates = new int[0];
+    public int goalCount = 0;
+    public int[] goalValues = new int[0];
+    public int[] goalMaximums = new int[0];
 
     public GameData()
     {

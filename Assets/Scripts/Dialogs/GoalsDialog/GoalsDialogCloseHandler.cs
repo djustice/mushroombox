@@ -13,7 +13,7 @@ public class GoalsDialogCloseHandler : MonoBehaviour
     
     public void OnCloseButtonClicked()
     {
-	    Debug.Log("GoalsDialog : OnCloseButtonClicked");
+	    D.Log("GoalsDialog : OnCloseButtonClicked");
 
 	    anim = goalsDialog.GetComponent<Animator>();
 	    anim.SetBool("Idle", false);

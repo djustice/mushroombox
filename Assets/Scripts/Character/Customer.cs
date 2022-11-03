@@ -30,30 +30,33 @@ public class Customer : Character
     IEnumerator CheckForMushrooms()
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 3f));
-Debug.Log(this.name + " check");
         if (Game.mushroomCount > 0)
         {
-            if (Vector3.Distance(transform.position, startingPos) < 0.5 ||
-                Vector3.Distance(transform.position, points[0]) < 0.5)
+            if (Vector3.Distance(transform.position, startingPos) < 5 || Vector3.Distance(transform.position, points[4]) < 5)
             {
                 if (!isMoving)
                 {
                     isMoving = true;
                     StartCoroutine("WalkPath");
                 }
+            } else
+            {
+                D.Log(this + " pos > 5, t.pos: " + transform.position + ", p[4]: " + points[4]);
             }
         }
     }
 
     IEnumerator WalkPath()
 	{
-        Debug.Log(this.name + " walk");
+        Game.player.customerWalking = true;
+        D.Log(this.name + " walk");
         Game.walkableArea.gameObject.SetActive(false);
 		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
-        Debug.Log(this.name + " walk @ 1");
+        D.Log(this.name + " walk @ 1");
         Game.player.customerWaiting = true;
-        Game.player.WalkToDesk();
+        if (!Game.player.walkingJars && !Game.player.walkingBoxes)
+            Game.player.WalkToDesk();
         yield return StartCoroutine("MoveUpTo", points[2]);
         SetDirection(Direction.Left);
         yield return StartCoroutine("WaitOnPlayer");
@@ -64,8 +67,9 @@ Debug.Log(this.name + " check");
         yield return StartCoroutine("ProcessSale");
         yield return StartCoroutine("HideCheckBubble");
         Game.player.customerWaiting = false;
+        Game.player.customerWalking = false;
         Game.walkableArea.gameObject.SetActive(true);
-        if (Game.player.jarQueue.Count > 0)
+        if (Game.player.jarQueue.Count > 0 && !Game.player.walkingBoxes)
         {
             Game.player.MoveCakes();
         }
@@ -77,7 +81,7 @@ Debug.Log(this.name + " check");
         yield return StartCoroutine("MoveLeftTo", points[4]);
         // transform.position = points[0];
         isMoving = false;
-        Debug.Log(this.name + " walk done");
+        D.Log(this.name + " walk done");
     }
 
     IEnumerator WaitOnPlayer()
@@ -116,6 +120,7 @@ Debug.Log(this.name + " check");
             Game.player.bubble.sprite = Game.player.bubbleSprites[0];
             bubble.sprite = bubbleSprites[2];
             Game.counter.mushroomChange(-1);
+            Game.coinCountTotal = Game.coinCountTotal + 10;
             Game.counter.coinChange(10);
         }
     }

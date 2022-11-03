@@ -40,7 +40,7 @@ public class GoalsButtonHandler : MonoBehaviour
 
     public void ExtendDialog()
 	{
-		//Debug.Log("GoalsButton : ExtendDialog");
+		//D.Log("GoalsButton : ExtendDialog");
 		//masks[0].SetActive(true);
 		//masks[1].SetActive(true);
         //Animator dialogAnim = goalsDialog.GetComponent<Animator>();
@@ -51,7 +51,7 @@ public class GoalsButtonHandler : MonoBehaviour
 
 	public void RetractButton()
 	{
-		//Debug.Log("GoalsButton : RetractDialog");
+		//D.Log("GoalsButton : RetractDialog");
 		//anim.SetBool("Idle", false);
 		//anim.SetBool("Extend", false);
 		//anim.SetBool("Retract", true);

@@ -39,7 +39,7 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
 
     public void OnCloseButtonClicked()
 	{
-		Debug.Log("PurchaseDialog : OnCloseClicked()");
+		D.Log("PurchaseDialog : OnCloseClicked()");
 		purchaseDialog.GetComponent<Animator>().SetInteger("state", 2);
 	}
     
@@ -54,7 +54,7 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
 
     public void OnPurchaseButtonClicked()
 	{
-		//Debug.Log("PurchaseDialog : OnPurchaseClicked()");
+		//D.Log("PurchaseDialog : OnPurchaseClicked()");
         //foreach (Image i in images)
         //{
         //    if(i.gameObject.activeSelf == true)
@@ -124,17 +124,17 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
     
 	public void UpdateCostColor()
 	{
-		Debug.Log("update.dlg.txt.color");
+		D.Log("update.dlg.txt.color");
 		foreach (TextMeshProUGUI costText in costTexts)
 		{
-			Debug.Log("update.dlg.txt.color.2");
+			D.Log("update.dlg.txt.color.2");
 			if (Game.coinCount >= int.Parse(costText.text))
 			{
-				costText.color = new Color(0f, 0.5f, 0f, 1f);
+				costText.color = new Color(0f, 1f, 0f, 1f);
 			}
 			else
 			{
-				costText.color = new Color(0.6f, 0f, 0f, 1f);
+				costText.color = new Color(0.5f, 0.5f, 0.5f, 1f);
 			}
 		}
 	}

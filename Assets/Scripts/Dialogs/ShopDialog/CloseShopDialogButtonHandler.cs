@@ -11,9 +11,9 @@ public class CloseShopDialogButtonHandler : MonoBehaviour
     public Animator anim;
     public void OnCloseButtonClicked()
     {
-        Debug.Log("mask " + maskTop.name);
+        D.Log("mask " + maskTop.name);
         maskTop.SetActive(false);
-        Debug.Log("mask " + maskBottom.name);
+        D.Log("mask " + maskBottom.name);
         maskBottom.SetActive(false);
 
         anim = shopDialog.GetComponent<Animator>();

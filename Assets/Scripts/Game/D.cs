@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class D : MonoBehaviour
 {
-    public static void log(object o)
+    public static bool Enabled = false;
+
+    public static void Log(object o, GameObject g = null)
     {
-        Debug.Log(o);
+        if (Enabled)
+        {
+            if (g == null)
+            {
+                Debug.Log(o);
+            }
+            else
+            {
+                Debug.Log(o, g);
+            }
+
+        }
     }
 }

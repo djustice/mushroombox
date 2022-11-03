@@ -44,7 +44,7 @@ public class TitleScreenButtonHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("C");
+            D.Log("C");
         }
     }
 
@@ -61,9 +61,9 @@ public class TitleScreenButtonHandler : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("A");
+        D.Log("A");
         fadeAnim.SetTrigger("FadeOut");
-        Debug.Log("B");
+        D.Log("B");
         isLoaded = true;
         yield return new WaitForSeconds(1);
         LoadL1();

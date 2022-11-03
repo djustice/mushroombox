@@ -12,6 +12,9 @@ public class WalkableArea : MonoBehaviour
 
     public void OnWalkableAreaClick()
     {
+        if (Game.player.walkingJars == true || Game.player.walkingBoxes == true)
+            return;
+
         if (Game.player.customerWaiting == true)
             return;
 
@@ -19,7 +22,7 @@ public class WalkableArea : MonoBehaviour
             return;
 
         Vector2 mousePos = Input.mousePosition;
-        Debug.Log("Walkable Area: " + Input.mousePosition);
+        D.Log("Walkable Area: " + Input.mousePosition);
 
         Game.player.WalkToThenStop(mousePos);
 

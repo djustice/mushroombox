@@ -51,7 +51,7 @@ public class TitleScreen : MonoBehaviour
         if (isLoaded) {
             scene.allowSceneActivation = true;
         } else {
-            Debug.Log("C");
+            D.Log("C");
         }
     }
 
@@ -69,9 +69,9 @@ public class TitleScreen : MonoBehaviour
         }
 
 
-        Debug.Log("A");
+        D.Log("A");
         fadeAnim.SetTrigger("FadeOut");
-        Debug.Log("B");
+        D.Log("B");
         yield return new WaitForSeconds(1);
         scene.allowSceneActivation = true;
     }

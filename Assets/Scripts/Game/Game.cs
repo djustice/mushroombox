@@ -12,10 +12,14 @@ public class Game : MonoBehaviour
 	public static John john;
 	public Customer[] customers;
     public bool pauseCustomers = true;
+    public int previousCustomer = 0;
     public static CollectibleCounter counter;
     public static int coinCount = 0;
+    public static int coinCountTotal = 0;
     public static int mushroomCount = 0;
+    public static int mushroomCountTotal = 0;
     public static int sporeCount = 0;
+    public static int sporeCountTotal = 0;
     public static int jarCount = 1;
     public static Placeholder jarPlaceholder;
     public static List<Jar> jars;
@@ -41,6 +45,8 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        D.Enabled = true;
+
         player = FindObjectOfType<Player>();
 	    john = FindObjectOfType<John>();
         walkableArea = FindObjectOfType<WalkableArea>();
@@ -71,15 +77,18 @@ public class Game : MonoBehaviour
         // foreach (GoalDisplay g in FindObjectsOfType<GoalDisplay>())
         // {
         //     goals.Add(g.goal);
-        //     Debug.Log(g.goal.Text);
+        //     D.Log(g.goal.Text);
         // }
 
         if (File.Exists(Application.persistentDataPath + "/save.txt"))
         {
             GameData loadData = SaveSystem.LoadGame();
             Game.counter.coinChange(loadData.coinCount, true);
+            Game.coinCountTotal = loadData.coinCountTotal;
             Game.counter.mushroomChange(loadData.mushroomCount, true);
+            Game.mushroomCountTotal = loadData.mushroomCountTotal;
             Game.counter.sporeChange(loadData.sporeCount, true);
+            Game.sporeCountTotal = loadData.sporeCountTotal;
 
             for (int i = 1; i < loadData.jarCount; i++)
             {
@@ -148,12 +157,6 @@ public class Game : MonoBehaviour
         	}
         }
         
-	    // if (skipToL2 == true)
-	    // {
-		//    GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanLevel2");
-		//    Input.gyro.enabled = true;
-	    // }
-        
 	    StartCoroutine("CustomerLoop");
     }
 
@@ -170,6 +173,11 @@ public class Game : MonoBehaviour
 		yield return new WaitForSeconds(5f);
 		
 		int x = (int) Random.Range(0, customers.Length);
+
+        while (x == previousCustomer)
+        {
+            x = (int)Random.Range(0, customers.Length);
+        }
 		
 		if (mushroomCount > 0)
 		{
@@ -181,7 +189,10 @@ public class Game : MonoBehaviour
 			}
 			
 			if (!foundMover)
+            {
+                previousCustomer = x;
 				customers[x].StartCheckForMushrooms();
+            }
 		}
 		
 		StartCoroutine("CustomerLoop");

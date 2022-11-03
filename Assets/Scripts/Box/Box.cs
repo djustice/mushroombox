@@ -118,11 +118,19 @@ public class Box : MonoBehaviour
                 return;
         }
 
+        if (bubble.sprite == bubbleSprites[0])
+            return;
+
         if (state == BoxState.Done)
         {
 	        Game.player.boxQueue.Enqueue(this);
+            D.Log("Enqueue: " + gameObject.name, gameObject);
+            D.Log("isMoving: " + Game.player.isMoving + ", walkingBoxes: " + Game.player.walkingBoxes, gameObject);
 	        SetBubbleSprite(BoxBubbleSprite.None);
-            Game.player.WalkToBoxes();
+            if (!Game.player.isMoving && !Game.player.walkingBoxes)
+                Game.player.WalkToBoxes();
         }
+
+
     }
 }

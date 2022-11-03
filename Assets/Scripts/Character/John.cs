@@ -61,10 +61,12 @@ public class John : Character
             GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
             CustomEvent.Trigger(this.gameObject, "John Done");
             Game.player.SetDirection(Direction.Down);
+            Game.coinCountTotal = Game.coinCountTotal + 100;
             Game.counter.coinChange(100, true);
             Game.counter.sporeChange(10, true);
             SaveSystem.SaveGame();
-            yield return StartCoroutine("WalkExitPath");
+            StartCoroutine("WalkExitPath");
+            yield return new WaitForSeconds(1f);
             tutorial.StartTutorial();
 
             yield break;
