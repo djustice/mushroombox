@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using MushroomBox.Debug;
+
 public class PurchaseDialogButtonHandler : MonoBehaviour
 {
     public GameObject purchaseDialog;
@@ -39,7 +41,7 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
 
     public void OnCloseButtonClicked()
 	{
-		D.Log("PurchaseDialog : OnCloseClicked()");
+		this.D("PurchaseDialog : OnCloseClicked()");
 		purchaseDialog.GetComponent<Animator>().SetInteger("state", 2);
 	}
     
@@ -54,7 +56,7 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
 
     public void OnPurchaseButtonClicked()
 	{
-		//D.Log("PurchaseDialog : OnPurchaseClicked()");
+		//this.D("PurchaseDialog : OnPurchaseClicked()");
         //foreach (Image i in images)
         //{
         //    if(i.gameObject.activeSelf == true)
@@ -124,10 +126,10 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
     
 	public void UpdateCostColor()
 	{
-		D.Log("update.dlg.txt.color");
+		this.D("update.dlg.txt.color");
 		foreach (TextMeshProUGUI costText in costTexts)
 		{
-			D.Log("update.dlg.txt.color.2");
+			this.D("update.dlg.txt.color.2");
 			if (Game.coinCount >= int.Parse(costText.text))
 			{
 				costText.color = new Color(0f, 1f, 0f, 1f);

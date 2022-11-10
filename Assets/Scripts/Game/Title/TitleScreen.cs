@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using MushroomBox.Debug;
+
 public class TitleScreen : MonoBehaviour
 {
     public GameObject newGameDialog;
@@ -51,7 +53,7 @@ public class TitleScreen : MonoBehaviour
         if (isLoaded) {
             scene.allowSceneActivation = true;
         } else {
-            D.Log("C");
+            this.D("C");
         }
     }
 
@@ -69,9 +71,9 @@ public class TitleScreen : MonoBehaviour
         }
 
 
-        D.Log("A");
+        this.D("A");
         fadeAnim.SetTrigger("FadeOut");
-        D.Log("B");
+        this.D("B");
         yield return new WaitForSeconds(1);
         scene.allowSceneActivation = true;
     }

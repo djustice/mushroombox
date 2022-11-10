@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using MushroomBox.Debug;
+
 public class CloseShopDialogButtonHandler : MonoBehaviour
 {
     public GameObject shopDialog;
@@ -11,9 +13,9 @@ public class CloseShopDialogButtonHandler : MonoBehaviour
     public Animator anim;
     public void OnCloseButtonClicked()
     {
-        D.Log("mask " + maskTop.name);
+        this.D("mask " + maskTop.name);
         maskTop.SetActive(false);
-        D.Log("mask " + maskBottom.name);
+        this.D("mask " + maskBottom.name);
         maskBottom.SetActive(false);
 
         anim = shopDialog.GetComponent<Animator>();

@@ -4,6 +4,8 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Game : MonoBehaviour
 {
     public Customer customer;
@@ -45,7 +47,8 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        D.Enabled = true;
+        MushroomBoxDebug.GetLoggerByType<Customer>().logger.filterLogType = LogType.Error;
+        MushroomBoxDebug.GetLoggerByType<WalkableArea>().logger.filterLogType = LogType.Error;
 
         player = FindObjectOfType<Player>();
 	    john = FindObjectOfType<John>();

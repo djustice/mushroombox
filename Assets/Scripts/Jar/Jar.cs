@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Jar : MonoBehaviour
 {
     public int state;
@@ -22,7 +24,7 @@ public class Jar : MonoBehaviour
 
     private void Awake()
 	{
-		// D.Log("Jar /" + this.name + "/ : Awake");
+		// this.D("Jar /" + this.name + "/ : Awake");
 		
         state = JarState.Empty;
         bubble.sprite = bubbleSprites[0];
@@ -31,7 +33,7 @@ public class Jar : MonoBehaviour
 
     public void SetProgress(int p)
 	{
-		// D.Log("Jar /" + this.name + "/ : SetProgress : " + p);
+		// this.D("Jar /" + this.name + "/ : SetProgress : " + p);
 		
         progress = p;
         SaveSystem.SaveGame();
@@ -39,7 +41,7 @@ public class Jar : MonoBehaviour
 
     public void SetState(int s, bool update = false)
 	{
-		// D.Log("Jar /" + this.name + "/ : SetState : " + s + " : update : " + update);
+		// this.D("Jar /" + this.name + "/ : SetState : " + s + " : update : " + update);
         state = s;
         SetProgress(progress);
         if (update)
@@ -48,55 +50,55 @@ public class Jar : MonoBehaviour
 
     public void SetBubbleSprite(int s)
 	{
-		// D.Log("Jar /" + this.name + "/ : SetBubbleSprite : " + s);
+		// this.D("Jar /" + this.name + "/ : SetBubbleSprite : " + s);
 		
         bubble.sprite = bubbleSprites[s];
     }
 
     public void SetSprite(int s)
 	{
-		// D.Log("Jar /" + this.name + "/ : SetSprite : " + s);
+		// this.D("Jar /" + this.name + "/ : SetSprite : " + s);
 		
         sprite.sprite = progressSprites[s];
     }
     
     IEnumerator StartProgress()
 	{
-		// D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime);
+		// this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime);
 		
 		int intervalChange = 0;
 		if (tapCount > 5) 
 		{
-			// D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : tapCount : >5");
+			// this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : tapCount : >5");
 			intervalChange = tapCount / 5;
 
 			if (intervalChange > 4)
 			{
-				// D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : intervalChange : " + intervalChange);
+				// this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : intervalChange : " + intervalChange);
 				intervalChange = 4;
 			}
 		}
 		
 		yield return new WaitForSeconds(5f - intervalChange);
-		// D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : waited seconds : " + (5 - intervalChange));
+		// this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : waited seconds : " + (5 - intervalChange));
 		
         if (progress > JarSprite.Substrate && progress < JarSprite.Growing5)
         {
-	        // D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : > Substrate && < Growing5");
+	        // this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : > Substrate && < Growing5");
 	        
             SetBubbleSprite(JarBubbleSprite.None);
             StartCoroutine("StartProgress");
         }
         else if (progress == JarSprite.Growing5)
         {
-	        // D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : > Growing5");
+	        // this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : > Growing5");
 	        
             GetComponent<Animator>().SetTrigger("Bounce");
             SetBubbleSprite(JarBubbleSprite.Water);
         }
         else if (progress == JarSprite.Done)
         {
-	        // D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : Done");
+	        // this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : Done");
 	        
             GetComponent<Animator>().SetBool("Idle", false);
             GetComponent<Animator>().SetTrigger("Done");
@@ -107,7 +109,7 @@ public class Jar : MonoBehaviour
 
         if (progress < progressSprites.Length)
         {
-	        // D.Log("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : < progressSprites.Length");
+	        // this.D("Jar /" + this.name + "/ : StartProgress : " + Time.fixedTime + " : progress : < progressSprites.Length");
 	        
             SetSprite(progress);
         }
@@ -115,7 +117,7 @@ public class Jar : MonoBehaviour
 
     public void SporeAnimation(bool active)
 	{
-		// D.Log("Jar /" + this.name + "/ : SporeAnimation : active : " + active);
+		// this.D("Jar /" + this.name + "/ : SporeAnimation : active : " + active);
         if (!active)
         {
             sporeAnim.GetComponent<Animator>().SetInteger("state", 0);
@@ -128,28 +130,28 @@ public class Jar : MonoBehaviour
 
     public void ShakeAnimation()
 	{
-		// D.Log("Jar /" + this.name + "/ : ShakeAnimation");
+		// this.D("Jar /" + this.name + "/ : ShakeAnimation");
 		
         GetComponent<Animator>().SetTrigger("Shake");
     }
 
     public void BounceAnimation()
 	{
-		// D.Log("Jar /" + this.name + "/ : BounceAnimation");
+		// this.D("Jar /" + this.name + "/ : BounceAnimation");
 		
         GetComponent<Animator>().SetTrigger("Bounce");
     }
     
 	public void TapAnimation()
 	{
-		// D.Log("Jar /" + this.name + "/ : TapAnimation");
+		// this.D("Jar /" + this.name + "/ : TapAnimation");
 		
 		GetComponent<Animator>().SetTrigger("Tap");
 	}
 
     public void DoneAnimation(bool active)
 	{
-		// D.Log("Jar /" + this.name + "/ : DoneAnimation : active : " + active);
+		// this.D("Jar /" + this.name + "/ : DoneAnimation : active : " + active);
 		
         if (active)
         {
@@ -167,16 +169,16 @@ public class Jar : MonoBehaviour
         if (Game.player.walkingBoxes == true)
             return;
 
-		// D.Log("Jar /" + this.name + "/ : OnMouseUp :");
+		// this.D("Jar /" + this.name + "/ : OnMouseUp :");
         if (Game.player.GetDirection() == Direction.Right)
         {
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : player facing right : true");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : player facing right : true");
 	        if (Vector2.Distance(Game.player.transform.position, Game.player.startingPos) < 5) 
 	        {
-		        // D.Log("Jar /" + this.name + "/ : OnMouseUp : player at startingPos(+-5) : true");
+		        // this.D("Jar /" + this.name + "/ : OnMouseUp : player at startingPos(+-5) : true");
 	        	return;
 	        }
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : player at startingPos(+-5) : false");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : player at startingPos(+-5) : false");
         }
         
         if (Game.player.jarQueue.Contains(this))
@@ -192,15 +194,15 @@ public class Jar : MonoBehaviour
 
         if (Game.player.walkingToStartPos == true)
 		{
-			// D.Log("Jar /" + this.name + "/ : OnMouseUp : player walking to start pos : true");
+			// this.D("Jar /" + this.name + "/ : OnMouseUp : player walking to start pos : true");
 			return;
 		}
         
-		// D.Log("Jar /" + this.name + "/ : OnMouseUp : player facing right : false");
+		// this.D("Jar /" + this.name + "/ : OnMouseUp : player facing right : false");
 
         if (state == JarState.Empty)
         {
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : jarState : empty");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : empty");
 
 	        SetProgress(1);
             SetState(JarState.Fill);
@@ -210,14 +212,14 @@ public class Jar : MonoBehaviour
             return;
         }
         
-		// D.Log("Jar /" + this.name + "/ : OnMouseUp : jarState : !empty");
+		// this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : !empty");
 
         if (state == JarState.Fill)
         {
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : jarState : fill");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : fill");
             if (Game.sporeCount >= 1)
             {
-	            // D.Log("Jar /" + this.name + "/ : OnMouseUp : sporeCount : >= 1");
+	            // this.D("Jar /" + this.name + "/ : OnMouseUp : sporeCount : >= 1");
                 SetProgress(2);
                 SetState(JarState.Growing);
                 SetBubbleSprite(JarBubbleSprite.None);
@@ -229,18 +231,18 @@ public class Jar : MonoBehaviour
 
         if (state == JarState.Growing)
         {
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : jarState : growing");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : growing");
 	        
             if (bubble.sprite == bubbleSprites[3])
             {
-	            // D.Log("Jar /" + this.name + "/ : OnMouseUp : bubbleSprite : 3");
+	            // this.D("Jar /" + this.name + "/ : OnMouseUp : bubbleSprite : 3");
                 DoneAnimation(true);
                 SetBubbleSprite(JarBubbleSprite.Check);
                 SetState(JarState.Done);
                 return;
             }
 
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : bubbleSprite : !3");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : bubbleSprite : !3");
 
 	        // Transform newFloatingText = Instantiate(floatingText);
 	        // newFloatingText.gameObject.SetActive(true);
@@ -251,7 +253,7 @@ public class Jar : MonoBehaviour
 
 	        // if (tapCount >= 19 && tapCount <= 20)
 	        // {
-		    //     // D.Log("Jar /" + this.name + "/ : OnMouseUp : tapCount : " + tapCount);
+		    //     // this.D("Jar /" + this.name + "/ : OnMouseUp : tapCount : " + tapCount);
 		    //     Game.counter.coinChange(-1);
 	        // }
 
@@ -260,7 +262,7 @@ public class Jar : MonoBehaviour
 
         if (state == JarState.Done)
         {
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : jarState : done");
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : done");
             foreach (Box box in Game.boxes)
             {
                 if (box.state == BoxState.Empty && box.isTarget == false)
@@ -276,12 +278,12 @@ public class Jar : MonoBehaviour
 
 	        if (nextBox == null) 
 	        {
-		        // D.Log("Jar /" + this.name + "/ : OnMouseUp : no empty box avail");
+		        // this.D("Jar /" + this.name + "/ : OnMouseUp : no empty box avail");
                 Game.player.NotifyNoBoxAvailable();
 		        return;
 	        }
 
-	        // D.Log("Jar /" + this.name + "/ : OnMouseUp : found empty box : " + nextBox.name);
+	        // this.D("Jar /" + this.name + "/ : OnMouseUp : found empty box : " + nextBox.name);
 
             nextBox.isTarget = true;
             SetProgress(0);
@@ -295,8 +297,6 @@ public class Jar : MonoBehaviour
             
 	        tapCount = 0;
         }
-
-        D.Enabled = true;
     }
 
     public void UpdateSprite()

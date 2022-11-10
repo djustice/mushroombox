@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Box : MonoBehaviour
 {
     public int state;
@@ -124,8 +126,8 @@ public class Box : MonoBehaviour
         if (state == BoxState.Done)
         {
 	        Game.player.boxQueue.Enqueue(this);
-            D.Log("Enqueue: " + gameObject.name, gameObject);
-            D.Log("isMoving: " + Game.player.isMoving + ", walkingBoxes: " + Game.player.walkingBoxes, gameObject);
+            this.D("Enqueue: " + gameObject.name, gameObject);
+            this.D("isMoving: " + Game.player.isMoving + ", walkingBoxes: " + Game.player.walkingBoxes, gameObject);
 	        SetBubbleSprite(BoxBubbleSprite.None);
             if (!Game.player.isMoving && !Game.player.walkingBoxes)
                 Game.player.WalkToBoxes();

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using MushroomBox.Debug;
+
 public class WalkableArea : MonoBehaviour
 {
     void Start()
@@ -22,9 +24,10 @@ public class WalkableArea : MonoBehaviour
             return;
 
         Vector2 mousePos = Input.mousePosition;
-        D.Log("Walkable Area: " + Input.mousePosition);
+        this.D("Walkable Area: " + Input.mousePosition);
 
-        Game.player.WalkToThenStop(mousePos);
+        if (Input.touchCount == 1)
+            Game.player.WalkToThenStop(mousePos);
 
         // float distX;
         // float distY;

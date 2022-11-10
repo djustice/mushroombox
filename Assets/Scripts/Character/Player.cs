@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Player : Character
 {
     Vector3 destJarPos;
@@ -36,8 +38,8 @@ public class Player : Character
 
     public void MoveCakes()
     {
-        D.Log("MoveCakes() called: " + Time.fixedTime);
-        D.Log("MoveCakes() called: cusWalk: " + customerWalking + ", cusWait: " + customerWaiting);
+        this.D("MoveCakes() called: " + Time.fixedTime);
+        this.D("MoveCakes() called: cusWalk: " + customerWalking + ", cusWait: " + customerWaiting);
         if (!customerWalking && !customerWaiting && !walkingBoxes)
         {
             StartCoroutine("WalkToJars");
@@ -57,7 +59,7 @@ public class Player : Character
                 nextBox = Game.getNextAvailBox();
                 if (nextBox != null)
                 {
-                    D.Log("walkingJars true");
+                    this.D("walkingJars true");
                     walkingJars = true;
                     isMoving = true;
                     yield return StartCoroutine("WalkJarToBox", jarQueue.Dequeue());
@@ -71,7 +73,7 @@ public class Player : Character
             else
             {
                 walkingJars = false;
-                D.Log("walkingJars false");
+                this.D("walkingJars false");
 
                 if (boxQueue.Count > 0)
                 {
@@ -79,7 +81,7 @@ public class Player : Character
                 }
                 else
                 {
-                    D.Log("empty jarQ && empty boxQ", gameObject);
+                    this.D("empty jarQ && empty boxQ", gameObject);
 
                     walkingBoxes = false;
 
@@ -97,7 +99,7 @@ public class Player : Character
         if (!isMoving && !customerWalking)
         {
             walkingBoxes = true;
-            D.Log("walkingBoxes true");
+            this.D("walkingBoxes true");
             StartCoroutine("HarvestBox", boxQueue.Dequeue());
         }
     }
@@ -141,9 +143,9 @@ public class Player : Character
                         WalkToDesk();
                     }
 
-                    D.Log("walkingJars false");
+                    this.D("walkingJars false");
                     walkingJars = false;
-                    D.Log("walkingBoxes false");
+                    this.D("walkingBoxes false");
                     walkingBoxes = false;
                 }
                 else
@@ -205,18 +207,18 @@ public class Player : Character
 	    
         if (boxQueue.Count == 0)
         {
-            D.Log("Player : Harvest Box : boxQueue.Count : " + boxQueue.Count);
+            this.D("Player : Harvest Box : boxQueue.Count : " + boxQueue.Count);
             if (jarQueue.Count > 0)
             {
-                D.Log("Player : Harvest Box : jarQueue.Count : " + jarQueue.Count);
+                this.D("Player : Harvest Box : jarQueue.Count : " + jarQueue.Count);
                 yield return StartCoroutine("WalkJarToBox", jarQueue.Dequeue());
             }
-            D.Log("Player : Harvest Box : Done");
+            this.D("Player : Harvest Box : Done");
             Game.player.SetDirection(Direction.Down);
             Game.player.SetIdle(true);
 
             walkingBoxes = false;
-            D.Log("walkingBoxes false");
+            this.D("walkingBoxes false");
 
             isMoving = false;
             if (customerWaiting == true)
@@ -234,7 +236,7 @@ public class Player : Character
 
     public void WalkToDesk()
     {
-        D.Log("WalkToDesk called: " + Time.fixedTime, gameObject);
+        this.D("WalkToDesk called: " + Time.fixedTime, gameObject);
         if (!isMoving) 
         {
             StartCoroutine("IWalkToDesk");

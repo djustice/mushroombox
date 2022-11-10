@@ -19,7 +19,7 @@ public class Tutorial : MonoBehaviour
     {
         if (Text[0].IsActive() == true) {
             Vignette.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-            Vector2 pos = new Vector2(Game.boxes[0].transform.position.x, Game.boxes[0].transform.position.y - 100);
+            Vector2 pos = new Vector2(Game.boxes[0].transform.position.x - 40, Game.boxes[0].transform.position.y - 60);
             Vignette.transform.position = pos;
             Text[0].gameObject.SetActive(false);
             Text[1].gameObject.SetActive(true);

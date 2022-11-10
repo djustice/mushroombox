@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class GoalsButtonHandler : MonoBehaviour
 {
     public GameObject goalsDialog;
@@ -11,6 +13,8 @@ public class GoalsButtonHandler : MonoBehaviour
 
     public void OnMouseUp()
     {
+        this.D("goal button");
+
         //foreach (GameObject mask in masks)
         //{
         //    mask.SetActive(true);

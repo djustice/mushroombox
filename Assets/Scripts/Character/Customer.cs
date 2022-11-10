@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Customer : Character
 {
     public GameObject[] path;
@@ -41,7 +43,7 @@ public class Customer : Character
                 }
             } else
             {
-                D.Log(this + " pos > 5, t.pos: " + transform.position + ", p[4]: " + points[4]);
+                this.D(this + " pos > 5, t.pos: " + transform.position + ", p[4]: " + points[4]);
             }
         }
     }
@@ -49,11 +51,11 @@ public class Customer : Character
     IEnumerator WalkPath()
 	{
         Game.player.customerWalking = true;
-        D.Log(this.name + " walk");
+        this.D(this.name + " walk");
         Game.walkableArea.gameObject.SetActive(false);
 		transform.position = points[0];
         yield return StartCoroutine("MoveLeftTo", points[1]);
-        D.Log(this.name + " walk @ 1");
+        this.D(this.name + " walk @ 1");
         Game.player.customerWaiting = true;
         if (!Game.player.walkingJars && !Game.player.walkingBoxes)
             Game.player.WalkToDesk();
@@ -81,7 +83,7 @@ public class Customer : Character
         yield return StartCoroutine("MoveLeftTo", points[4]);
         // transform.position = points[0];
         isMoving = false;
-        D.Log(this.name + " walk done");
+        this.D(this.name + " walk done");
     }
 
     IEnumerator WaitOnPlayer()

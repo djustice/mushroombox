@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using MushroomBox.Debug;
+
 public class TitleScreenButtonHandler : MonoBehaviour
 {
     public GameObject newGameDialog;
@@ -44,7 +46,7 @@ public class TitleScreenButtonHandler : MonoBehaviour
         }
         else
         {
-            D.Log("C");
+            this.D("C");
         }
     }
 
@@ -61,9 +63,9 @@ public class TitleScreenButtonHandler : MonoBehaviour
             yield return null;
         }
 
-        D.Log("A");
+        this.D("A");
         fadeAnim.SetTrigger("FadeOut");
-        D.Log("B");
+        this.D("B");
         isLoaded = true;
         yield return new WaitForSeconds(1);
         LoadL1();
