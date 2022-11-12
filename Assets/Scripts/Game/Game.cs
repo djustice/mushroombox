@@ -13,7 +13,7 @@ public class Game : MonoBehaviour
     public static Player player;
 	public static John john;
 	public Customer[] customers;
-    public bool pauseCustomers = true;
+    public static bool pauseCustomers = true;
     public int previousCustomer = 0;
     public static CollectibleCounter counter;
     public static int coinCount = 0;
@@ -35,11 +35,15 @@ public class Game : MonoBehaviour
 	public static GameObject goalsButton;
 	public static GameObject settingsButton;
 
+    public GameObject shedArrow;
+    public GameObject houseArrow;
+
     public static WalkableArea walkableArea;
 
     public Tutorial tutorial;
     
     public static List<Goal> goals;
+    public static List<GoalDisplay> goalDisplays;
     public static int goal;
 	
 	public bool doIntro = true;
@@ -76,12 +80,14 @@ public class Game : MonoBehaviour
 	    goalsButton = uiButtons[1];
 	    settingsButton = uiButtons[2];
 
-        // goals = new List<Goal>();
-        // foreach (GoalDisplay g in FindObjectsOfType<GoalDisplay>())
-        // {
-        //     goals.Add(g.goal);
-        //     D.Log(g.goal.Text);
-        // }
+        goals = new List<Goal>();
+        goalDisplays = new List<GoalDisplay>();
+        foreach (GoalDisplay g in FindObjectsOfType<GoalDisplay>())
+        {
+            goals.Add(g.goal);
+            goalDisplays.Add(g);
+            this.D(g.goal.Text);
+        }
 
         if (File.Exists(Application.persistentDataPath + "/save.txt"))
         {
@@ -139,12 +145,20 @@ public class Game : MonoBehaviour
                 Game.boxes[i].SetState(loadData.boxStates[i], true);
             }
 
-            // for (int i = 0; i < loadData.goalCount; i++)
-            // {
-            //     Game.goals[i].Value = loadData.goalValues[i];
-            //     Game.goals[i].Maximum = loadData.goalMaximums[i];
-            //     goal = i;
-            // }
+            for (int i = 0; i < loadData.goalCount; i++)
+            {
+                Game.goals[i].Value = loadData.goalValues[i];
+                Game.goals[i].Maximum = loadData.goalMaximums[i];
+                Game.goals[i].Complete = loadData.goalCompletions[i];
+                goal = i;
+            }
+
+            Game.pauseCustomers = loadData.pauseCustomers;
+            if (pauseCustomers == false)
+            {
+                shedArrow.SetActive(true);
+                this.D("ShedArrowButton true");
+            }
 
             SaveSystem.SaveGame();
         }
@@ -155,6 +169,9 @@ public class Game : MonoBehaviour
 	        	shopButton.SetActive(false);
 	        	goalsButton.SetActive(false);
 	        	settingsButton.SetActive(false);
+                mushroomCountTotal = 0;
+                coinCountTotal = 0;
+                sporeCountTotal = 0;
 	        	GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanIn");
 	        	
         	}
@@ -175,28 +192,31 @@ public class Game : MonoBehaviour
 	{
 		yield return new WaitForSeconds(5f);
 		
-		int x = (int) Random.Range(0, customers.Length);
-
-        while (x == previousCustomer)
+        if (pauseCustomers == false)
         {
-            x = (int)Random.Range(0, customers.Length);
-        }
-		
-		if (mushroomCount > 0)
-		{
-			bool foundMover = false;
-			foreach(Customer c in customers) 
-			{
-				if (c.isMoving)
-					foundMover = true;
-			}
-			
-			if (!foundMover)
+            int x = (int)Random.Range(0, customers.Length);
+
+            while (x == previousCustomer)
             {
-                previousCustomer = x;
-				customers[x].StartCheckForMushrooms();
+                x = (int)Random.Range(0, customers.Length);
             }
-		}
+
+            if (mushroomCount > 0)
+            {
+                bool foundMover = false;
+                foreach (Customer c in customers)
+                {
+                    if (c.isMoving)
+                        foundMover = true;
+                }
+
+                if (!foundMover)
+                {
+                    previousCustomer = x;
+                    customers[x].StartCheckForMushrooms();
+                }
+            }
+        }
 		
 		StartCoroutine("CustomerLoop");
 	}
@@ -217,5 +237,14 @@ public class Game : MonoBehaviour
         }
 
         return null;
+    }
+
+    public static void EnableL2()
+    {
+        GameObject.Find("WalkableArea").SetActive(false);
+        GameObject.Find("Goals Popup Progress").GetComponent<TextMeshProUGUI>().text = "5 / 5";
+        GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
+        Game.player.WalkToDesk();
+        Game.john.WalkIn();
     }
 }

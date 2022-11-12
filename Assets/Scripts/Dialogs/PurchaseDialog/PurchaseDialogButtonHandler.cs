@@ -28,11 +28,11 @@ public class PurchaseDialogButtonHandler : MonoBehaviour
         {
             if (Game.coinCount >= int.Parse(costText.text))
             {
-                costText.color = new Color(0f, 0.5f, 0f, 1f);
+                costText.color = new Color(0f, 1f, 0f, 1f);
             }
             else
             {
-                costText.color = new Color(0.6f, 0f, 0f, 1f);
+                costText.color = new Color(0.5f, 0.5f, 0.5f, 1f);
             }
         }
 

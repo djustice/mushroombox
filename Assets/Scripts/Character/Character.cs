@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using MushroomBox.Debug;
+
 public class Character : MonoBehaviour
 {
     public Sprite[] sprites;
@@ -163,6 +165,12 @@ public class Character : MonoBehaviour
         yield return StartCoroutine("IMoveTo", dest);
         SetDirection(Direction.Down);
         isMoving = false;
+        
+        if (Game.player.jarQueue.Count > 0)
+            Game.player.WalkToBoxes();
+
+        if (Game.player.boxQueue.Count > 0)
+            Game.player.MoveCakes();
     }
 
     public void MoveTo(Vector3 dest)

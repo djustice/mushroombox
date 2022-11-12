@@ -17,12 +17,17 @@ public class GameData
     public int goalCount = 0;
     public int[] goalValues = new int[0];
     public int[] goalMaximums = new int[0];
+    public bool[] goalCompletions = new bool[0];
+    public bool pauseCustomers = true;
 
     public GameData()
     {
         coinCount = Game.coinCount;
+        coinCountTotal = Game.coinCountTotal;
         mushroomCount = Game.mushroomCount;
+        mushroomCountTotal = Game.mushroomCountTotal;
         sporeCount = Game.sporeCount;
+        sporeCountTotal = Game.sporeCountTotal;
         
         jarCount = Game.jars.Count;
         jarProgresses = new int[jarCount];
@@ -55,14 +60,19 @@ public class GameData
             bsi++;
         }
 
-        // goalCount = Game.goals.Count;
-        // goalValues = new int[goalCount];
-        // goalMaximums = new int[goalCount];
-        // int goalIndex = 0;
-        // while (goalIndex < goalCount)
-        // {
-        //     goalValues[goalIndex] = (int)Game.goals[goalIndex].Value;
-        //     goalMaximums[goalIndex] = (int)Game.goals[goalIndex].Maximum;
-        // }
+        goalCount = Game.goals.Count;
+        goalValues = new int[goalCount];
+        goalMaximums = new int[goalCount];
+        goalCompletions = new bool [goalCount];
+        int goalIndex = 0;
+        while (goalIndex < goalCount)
+        {
+            goalValues[goalIndex] = (int)Game.goals[goalIndex].Value;
+            goalMaximums[goalIndex] = (int)Game.goals[goalIndex].Maximum;
+            goalCompletions[goalIndex] = Game.goals[goalIndex].Complete;
+            goalIndex++;
+        }
+
+        pauseCustomers = Game.pauseCustomers;
     }
 }

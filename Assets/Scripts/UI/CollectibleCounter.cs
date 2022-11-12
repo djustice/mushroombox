@@ -28,6 +28,8 @@ public class CollectibleCounter : MonoBehaviour
         else
         {
             Game.coinCount = Game.coinCount + coins;
+            if (coins > 0)
+                Game.coinCountTotal = Game.coinCountTotal + coins;
         }
 
         coinAnim.SetTrigger("CoinChange");
@@ -44,6 +46,9 @@ public class CollectibleCounter : MonoBehaviour
         else
         {
             Game.mushroomCount = Game.mushroomCount + mushrooms;
+
+            if (mushrooms > 0)
+                Game.mushroomCountTotal = Game.mushroomCountTotal + mushrooms;
         }
 
         mushroomAnim.SetTrigger("MushroomChange");
@@ -60,6 +65,9 @@ public class CollectibleCounter : MonoBehaviour
         else
         {
             Game.sporeCount= Game.sporeCount + spores;
+
+            if (spores > 0)
+                Game.sporeCountTotal = Game.sporeCountTotal + spores;
         }
 
         sporeAnim.SetTrigger("SporeChange");

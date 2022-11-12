@@ -11,7 +11,7 @@ public class TextDisplayEffect : MonoBehaviour
     public string[] texts;
     public bool isIdle = false;
     private TextDialog textDialog;
-    private int currentPage = 0;
+    public int currentPage = 0;
     private string pageText;
     private string currentText;
 
