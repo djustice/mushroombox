@@ -54,11 +54,10 @@ public class Customer : Character
         this.D(this.name + " walk");
         Game.walkableArea.gameObject.SetActive(false);
 		transform.position = points[0];
-        yield return StartCoroutine("MoveLeftTo", points[1]);
-        this.D(this.name + " walk @ 1");
         Game.player.customerWaiting = true;
         if (!Game.player.walkingJars && !Game.player.walkingBoxes)
             Game.player.WalkToDesk();
+        yield return StartCoroutine("MoveLeftTo", points[1]);
         yield return StartCoroutine("MoveUpTo", points[2]);
         SetDirection(Direction.Left);
         yield return StartCoroutine("WaitOnPlayer");

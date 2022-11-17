@@ -44,7 +44,7 @@ public class TitleScreen : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            StartCoroutine("LoadL1Co");
+            StartCoroutine("LoadL1Co", 3);
         }
     }
 
@@ -57,8 +57,10 @@ public class TitleScreen : MonoBehaviour
         }
     }
 
-    IEnumerator LoadL1Co()
+    IEnumerator LoadL1Co(int delay = 0)
     {
+        yield return new WaitForSeconds(delay);
+
         scene = SceneManager.LoadSceneAsync("L1");
 //        scene.allowSceneActivation = false;
 

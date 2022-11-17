@@ -11,7 +11,7 @@ public class Box : MonoBehaviour
     public Sprite[] boxSprites;
     public SpriteRenderer bubble;
     public Sprite[] bubbleSprites;
-    public SpriteRenderer light;
+    public new SpriteRenderer light;
 
     public int progress;
     public bool isTarget;
