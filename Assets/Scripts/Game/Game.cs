@@ -45,6 +45,9 @@ public class Game : MonoBehaviour
     public static List<Goal> goals;
     public static List<GoalDisplay> goalDisplays;
     public static int goal;
+
+    public static bool[] shedItems = new bool[16];
+    public GameObject[] shedItem;
 	
 	public bool doIntro = true;
 	public bool skipToL2 = true;
@@ -87,6 +90,11 @@ public class Game : MonoBehaviour
             goals.Add(g.goal);
             goalDisplays.Add(g);
             this.D(g.goal.Text);
+        }
+
+        for (int i = 0; i < shedItems.Length; i++)
+        {
+            shedItems[i] = true;
         }
 
         if (File.Exists(Application.persistentDataPath + "/save.txt"))
@@ -158,6 +166,13 @@ public class Game : MonoBehaviour
             {
                 shedArrow.SetActive(true);
                 this.D("ShedArrowButton true");
+            }
+
+            for (int i = 0; i < loadData.shedItems.Length - 1; i++)
+            {
+                this.D("Load: shed item " + i + " " + loadData.shedItems[i]);
+                shedItem[i].SetActive(loadData.shedItems[i]);
+                shedItems[i] = loadData.shedItems[i];
             }
 
             SaveSystem.SaveGame();

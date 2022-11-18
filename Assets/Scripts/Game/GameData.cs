@@ -18,6 +18,7 @@ public class GameData
     public int[] goalValues = new int[0];
     public int[] goalMaximums = new int[0];
     public bool[] goalCompletions = new bool[0];
+    public bool[] shedItems = new bool[16];
     public bool pauseCustomers = true;
 
     public GameData()
@@ -71,6 +72,14 @@ public class GameData
             goalMaximums[goalIndex] = (int)Game.goals[goalIndex].Maximum;
             goalCompletions[goalIndex] = Game.goals[goalIndex].Complete;
             goalIndex++;
+        }
+
+        shedItems = Game.shedItems;
+        int shedItemIndex = 0;
+        while (shedItemIndex < shedItems.Length)
+        {
+            shedItems[shedItemIndex] = Game.shedItems[shedItemIndex];
+            shedItemIndex++;
         }
 
         pauseCustomers = Game.pauseCustomers;

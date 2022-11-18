@@ -216,6 +216,11 @@ public class Jar : MonoBehaviour
 
         if (state == JarState.Fill)
         {
+            if (Game.sporeCount == 0)
+            {
+                Game.player.NotifyNoSpores();
+            }
+
 	        // this.D("Jar /" + this.name + "/ : OnMouseUp : jarState : fill");
             if (Game.sporeCount >= 1)
             {

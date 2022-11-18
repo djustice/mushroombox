@@ -118,7 +118,7 @@ public class John : Character
             shedArrow.SetActive(true);
             SaveSystem.SaveGame();
             StartCoroutine("IWalkExit");
-            GameObject.Find("WalkableArea").SetActive(true);
+            Game.walkableArea.gameObject.SetActive(true);
             if (Game.player.boxQueue.Count > 0)
                 Game.player.WalkToBoxes();
             yield break;

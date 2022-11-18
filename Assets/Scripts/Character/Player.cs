@@ -174,6 +174,18 @@ public class Player : Character
         bubble.sprite = bubbleSprites[0];
     }
 
+    public void NotifyNoSpores()
+    {
+        StartCoroutine("INotifyNoSpores");
+    }
+
+    IEnumerator INotifyNoSpores()
+    {
+        bubble.sprite = bubbleSprites[4];
+        yield return new WaitForSeconds(1);
+        bubble.sprite = bubbleSprites[0];
+    }
+
     IEnumerator HarvestBox(Box box)
     {
         if (box.state != BoxState.Done)

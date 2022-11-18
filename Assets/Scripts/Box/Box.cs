@@ -156,7 +156,7 @@ public class Box : MonoBehaviour
             this.D("isMoving: " + Game.player.isMoving + ", walkingBoxes: " + Game.player.walkingBoxes, gameObject);
             SetBubbleSprite(BoxBubbleSprite.None);
             GetComponent<Animator>().SetBool("Idle", true);
-            if (!Game.player.isMoving && !Game.player.walkingBoxes)
+            if (!Game.player.isMoving && !Game.player.walkingBoxes && !Game.player.walkingJars)
                 Game.player.WalkToBoxes();
         }
     }
