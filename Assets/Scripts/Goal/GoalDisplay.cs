@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using MushroomBox.Debug;
+
 public class GoalDisplay : MonoBehaviour
 {
     public Goal goal;
@@ -22,6 +24,7 @@ public class GoalDisplay : MonoBehaviour
 
     public void RefreshData()
     {
+        this.D("goal refresh " + goal.Value);
         Image i = GetComponentsInChildren<Image>()[1];
         i.sprite = goal.Sprite;
 
@@ -30,5 +33,6 @@ public class GoalDisplay : MonoBehaviour
 
         TextMeshProUGUI completedText = GetComponentsInChildren<TextMeshProUGUI>()[1];
         completedText.text = goal.Value + " / " + goal.Maximum;
+        this.D("goal refresh " + completedText.text);
     }
 }

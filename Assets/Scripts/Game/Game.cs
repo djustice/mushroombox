@@ -115,50 +115,56 @@ public class Game : MonoBehaviour
                 newJar.transform.position = pos;
                 Game.jars.Add(newJar);
 
-                if (Game.jars.Count == 3)
+                if (jars.Count == 3)
                 {
-                    Game.jarPlaceholder.gameObject.SetActive(false);
+                    jarPlaceholder.gameObject.SetActive(false);
                 }
             }
             for (int i = 0; i < loadData.jarCount; i++)
             {
                 if (loadData.jarProgresses[i] == 8)
                 {
-                    Game.jars[i].SetProgress(7);
+                    jars[i].SetProgress(7);
                 } else
                 {
-                    Game.jars[i].SetProgress(loadData.jarProgresses[i]);
+                    jars[i].SetProgress(loadData.jarProgresses[i]);
                 }
 
-                Game.jars[i].SetState(loadData.jarStates[i], true);
+                jars[i].SetState(loadData.jarStates[i], true);
             }
 
             for (int i = 1; i < loadData.boxCount; i++)
             {
-                Vector3 pos = Game.boxPlaceholder.transform.position;
-	            Game.boxPlaceholder.transform.position = new Vector3(pos.x + 185, pos.y);
-                Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), Game.boxes[0].transform.parent, false);
+                Vector3 pos = boxPlaceholder.transform.position;
+	            boxPlaceholder.transform.position = new Vector3(pos.x + 185, pos.y);
+                Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), boxes[0].transform.parent, false);
                 newBox.transform.position = pos;
-                Game.boxes.Add(newBox);
+                boxes.Add(newBox);
 
-                if (Game.boxes.Count == 4)
+                if (boxes.Count == 4)
                 {
-                    Game.boxPlaceholder.gameObject.SetActive(false);
+                    boxPlaceholder.gameObject.SetActive(false);
                 }
             }
 
             for (int i = 0; i < loadData.boxCount; i++)
             {
-                Game.boxes[i].SetProgress(loadData.boxProgresses[i]);
-                Game.boxes[i].SetState(loadData.boxStates[i], true);
+                boxes[i].SetProgress(loadData.boxProgresses[i]);
+                boxes[i].SetState(loadData.boxStates[i], true);
             }
 
             for (int i = 0; i < loadData.goalCount; i++)
             {
-                Game.goals[i].Value = loadData.goalValues[i];
-                Game.goals[i].Maximum = loadData.goalMaximums[i];
-                Game.goals[i].Complete = loadData.goalCompletions[i];
+                goals[i].Value = loadData.goalValues[i];
+                goals[i].Maximum = loadData.goalMaximums[i];
+                goals[i].Complete = loadData.goalCompletions[i];
                 goal = i;
+            }
+
+            goal = loadData.currentGoal;
+            if (goal == 0)
+            {
+                goalDisplays[0].gameObject.SetActive(false);
             }
 
             Game.pauseCustomers = loadData.pauseCustomers;
@@ -184,6 +190,7 @@ public class Game : MonoBehaviour
 	        	shopButton.SetActive(false);
 	        	goalsButton.SetActive(false);
 	        	settingsButton.SetActive(false);
+                goalDisplays[0].gameObject.SetActive(false);
                 mushroomCountTotal = 0;
                 coinCountTotal = 0;
                 sporeCountTotal = 0;

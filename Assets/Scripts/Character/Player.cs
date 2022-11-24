@@ -240,18 +240,19 @@ public class Player : Character
 
             // TEST GOAL 0
 
+            if (Game.mushroomCountTotal <= 5)
+            {
+                Game.goalDisplays[1].goal.Value = Game.mushroomCountTotal;
+                Game.goalDisplays[1].RefreshData();
+            }
+
             if (Game.mushroomCountTotal == 5)
             {
                 this.D("GOAL 0 Completed");
-                // TODO: enter john p2
-
-                Game.goals[0].Value = 5;
-                Game.goals[0].Complete = true;
-                Game.goalDisplays[0].RefreshData();
+                Game.goals[1].Value = 5;
+                Game.goals[1].Complete = true;
+                Game.goalDisplays[1].RefreshData();
                 Game.EnableL2();
-
-                // Game.pauseCustomers = false;
-                // SaveSystem.SaveGame();
             }
         } else
         {

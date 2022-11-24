@@ -249,18 +249,19 @@ public class Jar : MonoBehaviour
 
 	        // this.D("Jar /" + this.name + "/ : OnMouseUp : bubbleSprite : !3");
 
-	        // Transform newFloatingText = Instantiate(floatingText);
-	        // newFloatingText.gameObject.SetActive(true);
-	        // newFloatingText.SetParent(this.transform);
-	        // newFloatingText.GetComponent<Animator>().SetTrigger("Popup");
+	        Transform newFloatingText = Instantiate(floatingText);
+	        newFloatingText.gameObject.SetActive(true);
+	        newFloatingText.SetParent(this.transform);
+            if (tapCount > 0) 
+    	        newFloatingText.GetComponent<Animator>().SetTrigger("Popup");
 
-	        // tapCount++;
+	        tapCount++;
 
-	        // if (tapCount >= 19 && tapCount <= 20)
-	        // {
-		    //     // this.D("Jar /" + this.name + "/ : OnMouseUp : tapCount : " + tapCount);
-		    //     Game.counter.coinChange(-1);
-	        // }
+	        if (tapCount >= 19 && tapCount <= 20)
+	        {
+		        this.D("Jar /" + this.name + "/ : OnMouseUp : tapCount : " + tapCount);
+		        Game.counter.coinChange(-1);
+	        }
 
 	        TapAnimation();
         }

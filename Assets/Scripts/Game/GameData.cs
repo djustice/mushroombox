@@ -18,6 +18,7 @@ public class GameData
     public int[] goalValues = new int[0];
     public int[] goalMaximums = new int[0];
     public bool[] goalCompletions = new bool[0];
+    public int currentGoal = 0;
     public bool[] shedItems = new bool[16];
     public bool pauseCustomers = true;
 
@@ -62,6 +63,7 @@ public class GameData
         }
 
         goalCount = Game.goals.Count;
+        currentGoal = Game.goal;
         goalValues = new int[goalCount];
         goalMaximums = new int[goalCount];
         goalCompletions = new bool [goalCount];

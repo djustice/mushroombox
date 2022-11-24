@@ -4,6 +4,8 @@ using UnityEngine;
 using Unity.VisualScripting;
 using TMPro;
 
+using MushroomBox.Debug;
+
 public class John : Character
 {
     public GameObject[] enterPathNodes;
@@ -63,8 +65,6 @@ public class John : Character
     {
         walkableArea.SetActive(false);
         transform.position = new Vector2(Screen.width + 400, enterPathNodes[0].transform.position.y);
-        // if (!Game.player.walkingJars && !Game.player.walkingBoxes)
-        //     Game.player.WalkToDesk();
         yield return StartCoroutine("MoveLeftTo", enterPathNodes[2].transform.position);
         yield return StartCoroutine("MoveUpTo", enterPathNodes[4].transform.position);
         yield return StartCoroutine("MoveLeftTo", enterPathNodes[4].transform.position);
@@ -111,6 +111,15 @@ public class John : Character
 
         if (_textDialog.isActive == false)
         {
+            GameObject goalsPopup = GameObject.Find("Goals Popup");
+            goalsPopup.GetComponentsInChildren<TextMeshProUGUI>()[0].text = "Clean out the shed";
+            goalsPopup.GetComponentsInChildren<TextMeshProUGUI>()[1].text = "0 / 20";
+            goalsPopup.GetComponent<Animator>().SetTrigger("Extend");
+            Game.goalDisplays[0].gameObject.SetActive(true);
+            Game.goalDisplays[1].gameObject.SetActive(true);
+            Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text = Game.goals[1].Minimum + " / " + Game.goals[1].Maximum;
+            Game.goal = 1;
+            this.D("goal displays: " + Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text);
             CustomEvent.Trigger(this.gameObject, "John Done");
             Game.player.SetDirection(Direction.Down);
             Game.counter.mushroomChange(-5);
