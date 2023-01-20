@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.VisualScripting;
 using TMPro;
 
 using MushroomBox.Debug;
@@ -83,7 +82,7 @@ public class John : Character
         if (_textDialog.isActive == false)
         {
             GameObject.Find("Goals Popup").GetComponent<Animator>().SetTrigger("Extend");
-            CustomEvent.Trigger(this.gameObject, "John Done");
+            //CustomEvent.Trigger(this.gameObject, "John Done");
             Game.player.SetDirection(Direction.Down);
             Game.counter.coinChange(100, true);
             Game.counter.sporeChange(10, true);
@@ -120,7 +119,7 @@ public class John : Character
             Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text = Game.goals[1].Minimum + " / " + Game.goals[1].Maximum;
             Game.goal = 1;
             this.D("goal displays: " + Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text);
-            CustomEvent.Trigger(this.gameObject, "John Done");
+            //CustomEvent.Trigger(this.gameObject, "John Done");
             Game.player.SetDirection(Direction.Down);
             Game.counter.mushroomChange(-5);
             Game.pauseCustomers = false;

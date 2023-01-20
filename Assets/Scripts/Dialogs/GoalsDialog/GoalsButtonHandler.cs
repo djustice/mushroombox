@@ -1,66 +1,74 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using MushroomBox.Debug;
 
 public class GoalsButtonHandler : MonoBehaviour
 {
     public GameObject goalsDialog;
-    public GameObject[] masks;
+    
+    public GameObject shopButton;
+    public GameObject settingsButton;
 
-    public Animator anim;
+    public Animator buttonAnim;
+    public Animator dialogAnim;
+
+    public bool dialogOpen = false;
 
     public void OnMouseUp()
     {
-        this.D("goal button");
-
-        //foreach (GameObject mask in masks)
-        //{
-        //    mask.SetActive(true);
-        //}
-
-        //if (anim.GetBool("Idle") == true || anim.GetBool("Retract") == true) 
-        //{
-	    //    anim.SetBool("Idle", false);
-	    //    anim.SetBool("Retract", false);
-        //    anim.SetBool("Extend", true);
-	    //    Game.shopButton.gameObject.SetActive(false);
-	    //    Game.settingsButton.gameObject.SetActive(false);
-        //    return;
-        //}
-
-        //if (anim.GetBool("Extend") == true)
-        //{
-        //    anim.SetBool("Idle", false);
-        //    anim.SetBool("Extend", false);
-	    //    Animator dialogAnim = goalsDialog.GetComponent<Animator>();
-	    //    dialogAnim.SetBool("Idle", false);
-	    //    dialogAnim.SetBool("Extend", false);
-	    //    dialogAnim.SetBool("Retract", true);
-        //    return;
-        //}
+        this.D("OnMouseUp");
+        StartCoroutine("Toggle");
     }
 
-    public void ExtendDialog()
-	{
-		//D.Log("GoalsButton : ExtendDialog");
-		//masks[0].SetActive(true);
-		//masks[1].SetActive(true);
-        //Animator dialogAnim = goalsDialog.GetComponent<Animator>();
-        //dialogAnim.SetBool("Idle", false);
-        //dialogAnim.SetBool("Retract", false);
-        //dialogAnim.SetBool("Extend", true);
+    public void OnMaskClicked()
+    {
+        this.D("Mask Clicked");
+        StartCoroutine("Toggle");
     }
 
-	public void RetractButton()
-	{
-		//D.Log("GoalsButton : RetractDialog");
-		//anim.SetBool("Idle", false);
-		//anim.SetBool("Extend", false);
-		//anim.SetBool("Retract", true);
-		
-		//Game.shopButton.gameObject.SetActive(true);
-		//Game.settingsButton.gameObject.SetActive(true);
+    IEnumerator Toggle()
+    {
+        yield return null;
+
+        if (dialogOpen == false)
+        {
+            GetComponent<Button>().interactable = false;
+            dialogOpen = true;
+
+            shopButton.SetActive(false);
+            settingsButton.SetActive(false);
+
+            buttonAnim.SetBool("Idle", false);
+            buttonAnim.SetBool("Extend", true);
+            buttonAnim.SetBool("Retract", false);
+            yield return new WaitForSeconds(1);
+            dialogAnim.SetBool("Idle", false);
+            dialogAnim.SetBool("Extend", true);
+            dialogAnim.SetBool("Retract", false);
+            yield return new WaitForSeconds(1);
+            GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = false;
+
+            dialogAnim.SetBool("Idle", false);
+            dialogAnim.SetBool("Extend", false);
+            dialogAnim.SetBool("Retract", true);
+            yield return new WaitForSeconds(1);
+            buttonAnim.SetBool("Idle", false);
+            buttonAnim.SetBool("Extend", false);
+            buttonAnim.SetBool("Retract", true);
+            yield return new WaitForSeconds(0.6f);
+
+            shopButton.SetActive(true);
+            settingsButton.SetActive(true);
+
+            dialogOpen = false;
+            GetComponent<Button>().interactable = true;
+        }
     }
 }

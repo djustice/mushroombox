@@ -1,46 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+
+using MushroomBox.Debug;
 
 public class SettingsButtonHandler : MonoBehaviour
 {
-	public GameObject settingsDialog;
-	public GameObject settingsButton;
-	
-    public TextMeshProUGUI[] costTexts;
+	public Animator dialogAnim;
+	public Animator buttonAnim;
+
+	public bool dialogOpen = false;
 
     public void OnMouseUp()
 	{
-		Game.shopButton.SetActive(false);
-		Game.goalsButton.SetActive(false);
-	    Animator anim = GetComponent<Animator>();
-	    anim.SetBool("Idle", false);
-	    anim.SetBool("Retract", false);
-		anim.SetBool("Extend", true);
-		Game.shopButton.SetActive(false);
-		Game.goalsButton.SetActive(false);
+		this.D("OnMouseUp");
+		StartCoroutine("Toggle");
     }
-    
-	public void ShowSettingsDialog() 
+
+	public void OnMaskClicked()
 	{
-		Animator anim = settingsDialog.GetComponent<Animator>();
-		anim.SetInteger("state", 1);
+        this.D("OnMaskClicked");
+        StartCoroutine("Toggle");
 	}
 	
-	public void RetractButton() 
+	IEnumerator Toggle() 
 	{
-		Animator anim = settingsButton.GetComponent<Animator>();
-		anim.SetBool("Idle", false);
-		anim.SetBool("Extend", false);
-		anim.SetBool("Retract", true);
-		StartCoroutine("Wait");
-	}
-	
-	IEnumerator Wait() 
-	{
-		yield return new WaitForSeconds(0.5f);
-		Game.shopButton.SetActive(true);
-		Game.goalsButton.SetActive(true);
+		yield return null;
+
+        if (dialogOpen == false)
+        {
+            GetComponent<Button>().interactable = false;
+            dialogOpen = true;
+
+            Game.shopButton.SetActive(false);
+            Game.goalsButton.SetActive(false);
+
+            buttonAnim.SetBool("Idle", false);
+            buttonAnim.SetBool("Extend", true);
+            buttonAnim.SetBool("Retract", false);
+            yield return new WaitForSeconds(1);
+            dialogAnim.SetBool("Idle", false);
+            dialogAnim.SetBool("Extend", true);
+            dialogAnim.SetBool("Retract", false);
+            yield return new WaitForSeconds(1);
+            GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = false;
+
+            dialogAnim.SetBool("Idle", false);
+            dialogAnim.SetBool("Extend", false);
+            dialogAnim.SetBool("Retract", true);
+            yield return new WaitForSeconds(1);
+            buttonAnim.SetBool("Idle", false);
+            buttonAnim.SetBool("Extend", false);
+            buttonAnim.SetBool("Retract", true);
+            yield return new WaitForSeconds(0.6f);
+
+            Game.shopButton.SetActive(true);
+            Game.goalsButton.SetActive(true);
+
+            dialogOpen = false;
+            GetComponent<Button>().interactable = true;
+        }
 	}
 }

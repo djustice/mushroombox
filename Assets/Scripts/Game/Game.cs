@@ -35,6 +35,11 @@ public class Game : MonoBehaviour
 	public static GameObject goalsButton;
 	public static GameObject settingsButton;
 
+    public GameObject[] uiDialogs;
+    public static GameObject shopDialog;
+    public static GameObject goalsDialog;
+    public static GameObject settingsDialog;
+
     public GameObject shedArrow;
     public GameObject houseArrow;
 
@@ -82,6 +87,10 @@ public class Game : MonoBehaviour
 	    shopButton = uiButtons[0];
 	    goalsButton = uiButtons[1];
 	    settingsButton = uiButtons[2];
+
+        shopDialog = uiDialogs[0];
+        goalsDialog = uiDialogs[1];
+        settingsDialog = uiDialogs[2];
 
         goals = new List<Goal>();
         goalDisplays = new List<GoalDisplay>();
