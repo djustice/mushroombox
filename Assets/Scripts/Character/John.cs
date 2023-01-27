@@ -119,7 +119,7 @@ public class John : Character
             Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text = Game.goals[1].Minimum + " / " + Game.goals[1].Maximum;
             Game.goal = 1;
             this.D("goal displays: " + Game.goalDisplays[0].GetComponentsInChildren<TextMeshProUGUI>()[1].text);
-            //CustomEvent.Trigger(this.gameObject, "John Done");
+	        // exit
             Game.player.SetDirection(Direction.Down);
             Game.counter.mushroomChange(-5);
             Game.pauseCustomers = false;
@@ -159,10 +159,12 @@ public class John : Character
     }
 
     IEnumerator IWalkExit()
-    {
+	{
+		this.D("TestA");
         yield return StartCoroutine("MoveDownTo", exitPathNodes[0].transform.position);
         yield return StartCoroutine("MoveRightTo", new Vector3(Screen.width + 400, enterPathNodes[0].transform.position.y));
         transform.position = enterPathNodes[4].transform.position;
-        isMoving = false;
+		isMoving = false;
+		this.D("Exited...");
     }
 }
