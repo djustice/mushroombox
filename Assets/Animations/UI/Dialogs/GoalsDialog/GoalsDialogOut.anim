@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GoalsDialogOut
-  serializedVersion: 7
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -368,7 +368,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 3740461486
       attribute: 538195251
@@ -376,7 +375,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 704609038
       attribute: 538195251
@@ -384,7 +382,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 1447773579
       attribute: 2329410383
@@ -392,7 +389,6 @@ AnimationClip:
       typeID: 212
       customType: 22
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 2379888249
       attribute: 2329410383
@@ -400,7 +396,6 @@ AnimationClip:
       typeID: 212
       customType: 22
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 2379888249
       attribute: 538195251
@@ -408,7 +403,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 0
       attribute: 538195251
@@ -416,7 +410,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 3740461486
       attribute: 1460864421
@@ -424,7 +417,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 704609038
       attribute: 1460864421
@@ -432,7 +424,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 1447773579
       attribute: 1460864421
@@ -440,7 +431,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 1447773579
       attribute: 538195251
@@ -448,7 +438,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     - serializedVersion: 2
       path: 2379888249
       attribute: 1460864421
@@ -456,7 +445,6 @@ AnimationClip:
       typeID: 224
       customType: 28
       isPPtrCurve: 0
-      isIntCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -818,11 +806,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.6666667
-    functionName: TriggerAnimationEvent
-    data: RetractButton
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
