@@ -6,6 +6,7 @@ public class CheatButton : MonoBehaviour
 {
 	public void OnMouseUp()
 	{
-		Game.counter.mushroomChange(4);
+		Game.counter.mushroomChange(4, true);
+		Game.counter.coinChange(3600, true);
 	}
 }
