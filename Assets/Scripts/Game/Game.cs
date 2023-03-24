@@ -63,7 +63,7 @@ public class Game : MonoBehaviour
         MushroomBoxDebug.GetLoggerByType<WalkableArea>().logger.filterLogType = LogType.Error;
 
         player = FindObjectOfType<Player>();
-	    john = FindObjectOfType<John>();
+        john = FindObjectOfType<John>();
         walkableArea = FindObjectOfType<WalkableArea>();
 
         Placeholder[] placeholders = FindObjectsOfType<Placeholder>();
@@ -82,11 +82,11 @@ public class Game : MonoBehaviour
         Game.jars.Add(FindObjectOfType<Jar>());
 
         boxes = new List<Box>();
-	    Game.boxes.Add(FindObjectOfType<Box>());
+        Game.boxes.Add(FindObjectOfType<Box>());
         
-	    shopButton = uiButtons[0];
-	    goalsButton = uiButtons[1];
-	    settingsButton = uiButtons[2];
+        shopButton = uiButtons[0];
+        goalsButton = uiButtons[1];
+        settingsButton = uiButtons[2];
 
         shopDialog = uiDialogs[0];
         goalsDialog = uiDialogs[1];
@@ -119,7 +119,7 @@ public class Game : MonoBehaviour
             for (int i = 1; i < loadData.jarCount; i++)
             {
                 Vector3 pos = Game.jarPlaceholder.transform.position;
-	            Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 180);
+                Game.jarPlaceholder.transform.position = new Vector3(pos.x, pos.y - 180);
                 Jar newJar = Instantiate<Jar>(FindObjectOfType<Jar>(), Game.jars[0].transform.parent, false);
                 newJar.transform.position = pos;
                 Game.jars.Add(newJar);
@@ -145,7 +145,7 @@ public class Game : MonoBehaviour
             for (int i = 1; i < loadData.boxCount; i++)
             {
                 Vector3 pos = boxPlaceholder.transform.position;
-	            boxPlaceholder.transform.position = new Vector3(pos.x + 185, pos.y);
+                boxPlaceholder.transform.position = new Vector3(pos.x + 185, pos.y);
                 Box newBox = Instantiate<Box>(FindObjectOfType<Box>(), boxes[0].transform.parent, false);
                 newBox.transform.position = pos;
                 boxes.Add(newBox);
@@ -194,21 +194,20 @@ public class Game : MonoBehaviour
         }
         else
         {
-        	if (doIntro == true) {
-	        	john.Enter();
-	        	shopButton.SetActive(false);
-	        	goalsButton.SetActive(false);
-	        	settingsButton.SetActive(false);
+            if (doIntro == true) {
+                john.Enter();
+                shopButton.SetActive(false);
+                goalsButton.SetActive(false);
+                settingsButton.SetActive(false);
                 goalDisplays[0].gameObject.SetActive(false);
                 mushroomCountTotal = 0;
                 coinCountTotal = 0;
                 sporeCountTotal = 0;
-	        	GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanIn");
-	        	
-        	}
+                GameObject.Find("Camera").GetComponent<Animator>().SetTrigger("PanIn");
+            }
         }
         
-	    StartCoroutine("CustomerLoop");
+        StartCoroutine("CustomerLoop");
     }
 
 	IEnumerator WaitForIntro() 
