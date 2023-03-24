@@ -19,7 +19,7 @@ public class GameData
     public int[] goalMaximums = new int[0];
     public bool[] goalCompletions = new bool[0];
     public int currentGoal = 0;
-    public bool[] shedItems = new bool[16];
+    public bool[] shedItems = new bool[18];
     public bool pauseCustomers = true;
 
     public GameData()

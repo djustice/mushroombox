@@ -51,7 +51,7 @@ public class Game : MonoBehaviour
     public static List<GoalDisplay> goalDisplays;
     public static int goal;
 
-    public static bool[] shedItems = new bool[16];
+    public static bool[] shedItems = new bool[18];
     public GameObject[] shedItem;
 	
 	public bool doIntro = true;
