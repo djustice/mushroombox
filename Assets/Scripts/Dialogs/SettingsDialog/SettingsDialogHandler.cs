@@ -28,15 +28,12 @@ public class SettingsDialogHandler : MonoBehaviour
         anim.SetInteger("state", 2);
     }
 
-
-	// TODO: to VS
     public void OnRestartGameMouseUp()
     {
         SceneManager.LoadScene("TitleScene");
 //        gameObject.SetActive(false);
     }
 
-	// TODO: to VS
     public void OnTestButtonUp()
     {
         Game.coinCount = Game.coinCount + 1000;
